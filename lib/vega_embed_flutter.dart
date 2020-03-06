@@ -1,7 +1,3 @@
 library vega_embed_flutter;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'package:vega_embed_flutter/src/vega_embed.dart';
