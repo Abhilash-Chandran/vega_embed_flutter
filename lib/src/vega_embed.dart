@@ -41,6 +41,7 @@ class _VegaLiteEmbedderState extends State<VegaLiteEmbedder> {
     bodyElement = BodyElement();
     bodyElement.append(divElement);
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      vegaEmbed(divElement, widget.vegaLiteSchemaLocation);
       loadAvailableStyleToShadowDom();
     });
   }
@@ -56,7 +57,6 @@ class _VegaLiteEmbedderState extends State<VegaLiteEmbedder> {
   }
 
   loadAvailableStyleToShadowDom() {
-    vegaEmbed(divElement, widget.vegaLiteSchemaLocation);
     StyleElement vegaEmbedStyle = document.getElementById('vega-embed-style');
     StyleElement vegaToolTipStyle =
         document.getElementById('vega-tooltip-style');

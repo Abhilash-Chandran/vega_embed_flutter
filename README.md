@@ -3,13 +3,71 @@
 A Flutter widget to embed vega-lite charts to flutter web. Works only in Flutter web as of now. This could be adapted
 to be used with flutter webview widget.
 
+![A an example chart](chart_example_1.png)
+
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+### Import vega related Javascript files.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Start by adding the `script` tag for vega related java script files. For example.
+
+**Index.html**
+
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <title>vega_flutter</title>
+  </head>
+  <body>
+    <script src="main.dart.js" type="application/javascript"></script>
+  </body>
+</html>
+```
+
+### Add your vega lite schema files
+
+Vega-Lite and Vega deines its visualsation in terms of json file. So for you project it would be easy to maintain all this json files in a folder say _vega_schemas_ folder. For example
+
+```
+$Project_root\vega_schemas
+              |_ bart_chart.json
+              |_ interactive_multiline_plot.json
+```
+
+### Add assets entry in pupspec.yaml
+
+In order for the web build to pick up the json schemas add it your `pubspec.yaml`. For e.g.
+
+```
+flutter:
+  uses-material-design: true
+  # This line includes all the files these directories during the build process
+  # and placess them under build/web/assets folder.
+  assets:
+    - vega_schemas/
+```
+
+### Import the file use the widget
+
+Just import the `vega_embed_flutter` library as below
+
+`import 'package:vega_embed_flutter/vega_embed_flutter.dart';`
+
+Create a normal stateless widget and use it as normal stateful widget.
+
+```
+class BarChart extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return VegaLiteEmbedder(
+      viewFactoryId: 'MyBarChart',
+      vegaLiteSchemaLocation: '/assets/vega_schemas/bar_chart.json',
+    );
+  }
+}
+```
