@@ -7,12 +7,33 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Vega=embed demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: InteractiveSplom(),
+      home: MyPage(),
     );
+  }
+}
+
+class MyPage extends StatelessWidget {
+  const MyPage({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+      Expanded(
+        child: BarChart(),
+      ),
+      Expanded(
+        child: InteractiveMultiLineChart(),
+      ),
+      Expanded(
+        child: InteractiveSplom(),
+      ),
+    ]);
   }
 }
 
@@ -21,7 +42,7 @@ class BarChart extends StatelessWidget {
   Widget build(BuildContext context) {
     return VegaLiteEmbedder(
       viewFactoryId: 'MyBarChart',
-      vegaLiteSchemaLocation: '/assets/vega_schemas/bar_chart.json',
+      vegaLiteSpecLocation: '/assets/vega_lite_specs/bar_chart.json',
     );
   }
 }
@@ -30,8 +51,8 @@ class InteractiveSplom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return VegaLiteEmbedder(
-      viewFactoryId: 'MyBarChart',
-      vegaLiteSchemaLocation: '/assets/vega_schemas/interactive_splom.json',
+      viewFactoryId: 'MyInteractiveSplom',
+      vegaLiteSpecLocation: '/assets/vega_lite_specs/interactive_splom.json',
     );
   }
 }
@@ -41,8 +62,8 @@ class InteractiveMultiLineChart extends StatelessWidget {
   Widget build(BuildContext context) {
     return VegaLiteEmbedder(
       viewFactoryId: 'InteractiveMultiLine',
-      vegaLiteSchemaLocation:
-          '/assets/vega_schemas/interactive_multiline_plot.json',
+      vegaLiteSpecLocation:
+          '/assets/vega_lite_specs/interactive_multiline_plot.json',
     );
   }
 }

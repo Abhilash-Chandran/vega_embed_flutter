@@ -3,8 +3,15 @@ library vega_interops;
 
 import 'package:js/js.dart';
 
+@JS('JSON.parse')
+external dynamic parse(dynamic);
+
 @JS('vegaEmbed')
 external void vegaEmbed(dynamic domElement, String vegaSchema,
+    [VegaEmbedOptions vegaEmbedOptions]);
+
+@JS('vegaEmbed')
+external void vegaContainer(String vegsSchema,
     [VegaEmbedOptions vegaEmbedOptions]);
 
 @JS()

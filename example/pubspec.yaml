@@ -23,5 +23,5 @@ flutter:
   # This line includes all the files these directories during the build process
   # and placess them under build/web/assets folder.
   assets:
-    - vega_schemas/
+    - vega_lite_specs/
     - js/

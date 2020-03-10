@@ -4,6 +4,7 @@ import 'dart:html';
 import 'dart:ui' as ui;
 
 import 'package:vega_embed_flutter/src/vega_interops.dart';
+import 'package:vega_embed_flutter/src/vega-related-css.dart';
 
 class VegaLiteEmbedder extends StatefulWidget {
   /// This viewFactory ID should be unique accross elements.
@@ -11,7 +12,9 @@ class VegaLiteEmbedder extends StatefulWidget {
   final String viewFactoryId;
 
   /// This is usually a URL pointing to json file or a json file served as part of your web assets.
-  final String vegaLiteSchemaLocation;
+  final String vegaLiteSpecLocation;
+
+
 
   /// Set of options for vegaEmbeder. Please check the documentation of vega-embed for more info.
   /// This is dartified version of the options avaailable.
@@ -19,9 +22,10 @@ class VegaLiteEmbedder extends StatefulWidget {
   final VegaEmbedOptions vegaOptions;
   VegaLiteEmbedder({
     @required this.viewFactoryId,
-    @required this.vegaLiteSchemaLocation,
+    this.vegaLiteSpecLocation,
     this.vegaOptions,
-  })  : assert(vegaLiteSchemaLocation != null),
+  })  : assert(vegaLiteSpecLocation != null,
+            'Provide a vegalitespeclocation.'),
         assert(viewFactoryId != null);
   @override
   _VegaLiteEmbedderState createState() => _VegaLiteEmbedderState();
@@ -39,33 +43,31 @@ class _VegaLiteEmbedderState extends State<VegaLiteEmbedder> {
     super.initState();
     divElement = DivElement()..id = widget.viewFactoryId;
     bodyElement = BodyElement();
+    // add the div element which holds the plot.
     bodyElement.append(divElement);
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      vegaEmbed(divElement, widget.vegaLiteSchemaLocation);
-      loadAvailableStyleToShadowDom();
-    });
+
+    // Add the css style elements to renders plots options properly.
+    StyleElement vegaEmbedStyle = StyleElement()..text = VegaEmbedStyle;
+    StyleElement vegaToolTipStyle = StyleElement()..text = VegaToolTipStyle;
+    // TODO: add the theme options of vega-embed.
+    bodyElement.append(vegaEmbedStyle);
+    bodyElement.append(vegaToolTipStyle);
   }
 
   @override
   Widget build(BuildContext context) {
+    Container();
     // ignore: undefined_prefixed_name
     ui.platformViewRegistry.registerViewFactory(widget.viewFactoryId,
         (int viewId) {
       return bodyElement;
     });
+    if (widget.vegaLiteSpecLocation != null) {
+      vegaEmbed(divElement, widget.vegaLiteSpecLocation);
+    } else {
+      divElement
+          .appendText('Something went wrong. A vega-lite Spec is manadatory.');
+    }
     return HtmlElementView(viewType: widget.viewFactoryId);
-  }
-
-  loadAvailableStyleToShadowDom() {
-    StyleElement vegaEmbedStyle = document.getElementById('vega-embed-style');
-    StyleElement vegaToolTipStyle =
-        document.getElementById('vega-tooltip-style');
-    if (vegaEmbedStyle != null) {
-      bodyElement.append(vegaEmbedStyle);
-    }
-    if (vegaToolTipStyle != null) {
-      bodyElement.append(vegaToolTipStyle);
-    }
-    setState(() {});
   }
 }

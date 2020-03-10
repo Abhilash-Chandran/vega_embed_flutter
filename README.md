@@ -7,7 +7,7 @@ to be used with flutter webview widget.
 
 ## Getting Started
 
-### Import vega related Javascript files.
+### Import Vega related Javascript files.
 
 Start by adding the `script` tag for vega related java script files. For example.
 
@@ -31,10 +31,10 @@ Start by adding the `script` tag for vega related java script files. For example
 
 ### Add your vega lite schema files
 
-Vega-Lite and Vega deines its visualsation in terms of json file. So for you project it would be easy to maintain all this json files in a folder say _vega_schemas_ folder. For example
+Vega-Lite and Vega dfeines its visualsation in the form of json file. So for you project it would be easy to maintain all this vega-lite spec files in a folder say _vega_lite_specs_ folder. For example
 
 ```
-$Project_root\vega_schemas
+$Project_root\vega_lite_specs
               |_ bart_chart.json
               |_ interactive_multiline_plot.json
 ```
@@ -49,7 +49,7 @@ flutter:
   # This line includes all the files these directories during the build process
   # and placess them under build/web/assets folder.
   assets:
-    - vega_schemas/
+    - vega_lite_specs/
 ```
 
 ### Import the file use the widget
@@ -58,7 +58,7 @@ Just import the `vega_embed_flutter` library as below
 
 `import 'package:vega_embed_flutter/vega_embed_flutter.dart';`
 
-Create a normal stateless widget and use it as normal stateful widget.
+Create a normal stateless/ful widget and use it as a normal stateless/ful widget.
 
 ```
 class BarChart extends StatelessWidget {
@@ -66,7 +66,7 @@ class BarChart extends StatelessWidget {
   Widget build(BuildContext context) {
     return VegaLiteEmbedder(
       viewFactoryId: 'MyBarChart',
-      vegaLiteSchemaLocation: '/assets/vega_schemas/bar_chart.json',
+      vegaLiteSpecLocation: '/assets/vega_lite_specs/bar_chart.json',
     );
   }
 }
