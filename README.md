@@ -52,7 +52,7 @@ flutter:
     - vega_lite_specs/
 ```
 
-### Import the file use the widget
+### Import the file and use the widget
 
 Just import the `vega_embed_flutter` library as below
 

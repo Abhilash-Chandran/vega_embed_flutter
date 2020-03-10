@@ -2,8 +2,8 @@ name: vega_embed_flutter
 description:
   A Flutter widget to embed vega-lite charts to flutter web. Works only in Flutter web as of now. This could be adapted
   to be used with flutter webview widget.
-version: 0.0.1
-author: Abhilash Chandran <csc.abhilash@gmail.com>
+version: 0.1.0
+
 homepage: https://github.com/Abhilash-Chandran/vega_embed_flutter
 
 environment:
