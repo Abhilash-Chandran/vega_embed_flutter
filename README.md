@@ -1,5 +1,5 @@
 ![](https://github.com/Abhilash-Chandran/vega_embed_flutter/workflows/build%20and%20test/badge.svg)
-[![pub package](https://img.shields.io/pub/v/badge.svg)](https://pub.dartlang.org/packages/vega_embed_flutter)
+[![pub package](https://img.shields.io/pub/v/vega_embed_flutter.svg)](https://pub.dev/packages/vega_embed_flutter)
 
 # vega_embed_flutter
 
