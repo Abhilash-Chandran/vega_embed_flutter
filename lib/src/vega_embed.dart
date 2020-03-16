@@ -14,8 +14,6 @@ class VegaLiteEmbedder extends StatefulWidget {
   /// This is usually a URL pointing to json file or a json file served as part of your web assets.
   final String vegaLiteSpecLocation;
 
-
-
   /// Set of options for vegaEmbeder. Please check the documentation of vega-embed for more info.
   /// This is dartified version of the options avaailable.
   /// Please bear in mind this functionality is not tested and could break easily.
@@ -24,8 +22,7 @@ class VegaLiteEmbedder extends StatefulWidget {
     @required this.viewFactoryId,
     this.vegaLiteSpecLocation,
     this.vegaOptions,
-  })  : assert(vegaLiteSpecLocation != null,
-            'Provide a vegalitespeclocation.'),
+  })  : assert(vegaLiteSpecLocation != null, 'Provide a vegalitespeclocation.'),
         assert(viewFactoryId != null);
   @override
   _VegaLiteEmbedderState createState() => _VegaLiteEmbedderState();
@@ -56,14 +53,17 @@ class _VegaLiteEmbedderState extends State<VegaLiteEmbedder> {
 
   @override
   Widget build(BuildContext context) {
-    Container();
     // ignore: undefined_prefixed_name
     ui.platformViewRegistry.registerViewFactory(widget.viewFactoryId,
         (int viewId) {
       return bodyElement;
     });
     if (widget.vegaLiteSpecLocation != null) {
-      vegaEmbed(divElement, widget.vegaLiteSpecLocation);
+      if (widget.vegaOptions != null) {
+        vegaEmbed(divElement, widget.vegaLiteSpecLocation, widget.vegaOptions);
+      } else {
+        vegaEmbed(divElement, widget.vegaLiteSpecLocation);
+      }
     } else {
       divElement
           .appendText('Something went wrong. A vega-lite Spec is manadatory.');

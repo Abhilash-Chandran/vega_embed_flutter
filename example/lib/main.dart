@@ -23,20 +23,42 @@ class MyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+    return Row(children: [
       Expanded(
-        child: BarChart(),
+        flex: 2,
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                    border: Border(
+                  right: BorderSide(color: Colors.purple),
+                  bottom: BorderSide(color: Colors.purple),
+                )),
+                child: InteractiveMultiLineChart(),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                    border: Border(
+                  right: BorderSide(color: Colors.purple),
+                )),
+                child: BarChart(),
+              ),
+            ),
+          ],
+        ),
       ),
       Expanded(
-        child: InteractiveMultiLineChart(),
-      ),
-      Expanded(
+        flex: 3,
         child: InteractiveSplom(),
       ),
     ]);
   }
 }
 
+/// A simple bar chart with inline data.
 class BarChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -47,16 +69,21 @@ class BarChart extends StatelessWidget {
   }
 }
 
+/// An interactive multi line plot with hover tool tip.
+/// Uses the VegaEmbedOptions to set the theme as 'quartz'.
 class InteractiveSplom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return VegaLiteEmbedder(
       viewFactoryId: 'MyInteractiveSplom',
       vegaLiteSpecLocation: '/assets/vega_lite_specs/interactive_splom.json',
+      vegaOptions: VegaEmbedOptions()..theme = 'quartz',
     );
   }
 }
 
+/// An interactive scatter plot of the Iris data set.
+/// Uses the VegaEmbedOptions to set the theme as 'dark'.
 class InteractiveMultiLineChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -64,6 +91,7 @@ class InteractiveMultiLineChart extends StatelessWidget {
       viewFactoryId: 'InteractiveMultiLine',
       vegaLiteSpecLocation:
           '/assets/vega_lite_specs/interactive_multiline_plot.json',
+      vegaOptions: VegaEmbedOptions()..theme = 'dark',
     );
   }
 }

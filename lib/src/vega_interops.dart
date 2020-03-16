@@ -54,6 +54,8 @@ class VegaEmbedOptions {
   external get downloadFileName;
   external get formatLocale;
   external get timeFormatLocale;
+
+  external set theme(String theme);
 }
 
 @JS()
