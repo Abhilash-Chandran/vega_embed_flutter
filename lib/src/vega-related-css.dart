@@ -1,6 +1,6 @@
 // generated with build-vega-embed-style.sh
 
-const String  VegaEmbedStyle = '''
+const String VegaEmbedStyle = '''
 .vega-embed {
   position: relative;
   display: inline-block;
@@ -115,7 +115,7 @@ const String  VegaEmbedStyle = '''
 }
 ''';
 
-const String  VegaToolTipStyle = '''
+const String VegaToolTipStyle = '''
 #vg-tooltip-element {
   visibility: hidden;
   padding: 8px;
@@ -171,4 +171,3 @@ const String  VegaToolTipStyle = '''
   color: #bfbfbf;
 }
 ''';
-

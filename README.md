@@ -84,6 +84,6 @@ class BarChart extends StatelessWidget {
 
 # VegaEmbed Options [WIP]
 
-Some of the VegaEmbed option like default theming is already working. Remaining option will tested and documented as and when this package progresses.
+Some of the VegaEmbed option like default theming is already working. Remaining option will be tested and documented as and when this package progresses.
 
 #### Any kind of code, idea, suggestions are welcome. Please check the repository and file your feedbacks and bugs which is highly appreciated.

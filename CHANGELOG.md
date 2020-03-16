@@ -1,6 +1,7 @@
-## [0.1.1+1] - 16 March 2020.
+## [0.1.1+1] - [0.1.1+3] 17 March 2020.
 
 - edited the example section.
+- added git hub actions.
 
 ## [0.1.1] - 16 March 2020.
 
