@@ -9,8 +9,25 @@ The below can be run by changin into the example folder and running for web usin
 ```text
 $> git clone https://github.com/Abhilash-Chandran/vega_embed_flutter.git
 $> cd vega_embed_flutter/example
+```
+
+create a `main.dart` file in the `vega_embed_flutter/example/lib` director and import the `Example` Widget from `example.dart` as shown below.
+_*main.dart*_
+
+```dart
+import 'package:flutter/material.dart';
+import 'example.dart'
+
+void main() => runApp(ExampleApp());
+```
+
+Save the file and run the following command.
+
+```text
 $> flutter run -d chrome
 ```
+
+This will run the availale example and open a browser with the predefined charts embeded using `VegaLiteEmbedde` widget.
 
 ## Result of repo example.
 

@@ -1,4 +1,8 @@
-## [0.1.1] - 10 March 2020.
+## [0.1.1+1] - 16 March 2020.
+
+- edited the example section.
+
+## [0.1.1] - 16 March 2020.
 
 - Now the widget accepts and passes the VegaEmbedOptions.
 - Created a full fledged demo page.

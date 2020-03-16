@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vega_embed_flutter/vega_embed_flutter.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
+class ExampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
