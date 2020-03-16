@@ -1,5 +1,5 @@
 on: push
-name: Job on pushing vega_embed_flutter
+name: build and test
 jobs:
   build:
     name: Build vega_embed_flutter on stable

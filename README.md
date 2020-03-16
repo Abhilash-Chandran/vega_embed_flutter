@@ -1,3 +1,6 @@
+![](https://github.com/Abhilash-Chandran/vega_embed_flutter/workflows/build%20and%20test/badge.svg)
+[![pub package](https://img.shields.io/pub/v/badge.svg)](https://pub.dartlang.org/packages/badge)
+
 # vega_embed_flutter
 
 A Flutter widget to embed vega-lite charts to flutter web. Works only in Flutter web as of now. Internall it uses vega-embed js library to embed these specs using JS interops and `HTMLElementView`. Here is an example chart rendered using this package.
