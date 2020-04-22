@@ -22,21 +22,21 @@ class VegaEmbedOptions {
     String theme,
     dynamic defaultStyle,
     String renderer,
-    // todo: Define LogLevel
+    LogLevel logLevel,
     dynamic tooltip,
     // todo: Define loader
     // todo: define patch
     num width,
     num height,
-    // todo: define padding
-    // todo: define actions
+    Padding padding,
+    Actions actions,
     num scaleFactor,
     // todo: define config
     String editorUrl,
     String sourceHeader,
     String sourceFoorter,
     // todo: define hover,
-    // todo: define i18n
+    I18N i18n,
     String downloadFileName,
     FormatLocale formatLocale,
     TimeFormatLocale timeFormatLocale,
@@ -48,14 +48,36 @@ class VegaEmbedOptions {
   external get toolTip;
   external get width;
   external get height;
+  external get padding;
+  external get actions;
   external get scaleFactor;
   external get editorUrl;
   external get sourceHeader;
   external get downloadFileName;
   external get formatLocale;
   external get timeFormatLocale;
+  external get logLevel;
+  external get i18n;
+}
 
-  external set theme(String theme);
+@JS()
+@anonymous
+class I18N {
+  external factory I18N({
+    String COMPILED_ACTION,
+    String EDITOR_ACTION,
+    String PNG_ACTION,
+    String SOURCE_ACTION,
+    String SVG_ACTION,
+  });
+}
+
+enum LogLevel {
+  None,
+  Error,
+  Warn,
+  Info,
+  Debug,
 }
 
 @JS()
@@ -71,6 +93,22 @@ class Padding {
   external get right;
   external get top;
   external get bottom;
+}
+
+@JS()
+@anonymous
+class Actions {
+  external factory Actions({
+    bool editor = true,
+    bool export = true,
+    bool source = true,
+    bool compiled = false,
+  });
+
+  external get editor;
+  external get export;
+  external get source;
+  external get compiled;
 }
 
 @JS()

@@ -46,7 +46,6 @@ class _VegaLiteEmbedderState extends State<VegaLiteEmbedder> {
     // Add the css style elements to renders plots options properly.
     StyleElement vegaEmbedStyle = StyleElement()..text = VegaEmbedStyle;
     StyleElement vegaToolTipStyle = StyleElement()..text = VegaToolTipStyle;
-    // TODO: add the theme options of vega-embed.
     bodyElement.append(vegaEmbedStyle);
     bodyElement.append(vegaToolTipStyle);
   }
@@ -60,6 +59,11 @@ class _VegaLiteEmbedderState extends State<VegaLiteEmbedder> {
     });
     if (widget.vegaLiteSpecLocation != null) {
       if (widget.vegaOptions != null) {
+        if (widget.vegaOptions.defaultStyle is String) {
+          StyleElement embedStyle = StyleElement()
+            ..innerText = widget.vegaOptions.defaultStyle;
+          bodyElement.append(embedStyle);
+        }
         vegaEmbed(divElement, widget.vegaLiteSpecLocation, widget.vegaOptions);
       } else {
         vegaEmbed(divElement, widget.vegaLiteSpecLocation);

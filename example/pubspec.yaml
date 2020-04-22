@@ -4,7 +4,7 @@ description: A new Flutter project.
 version: 1.0.0+3
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=2.1.0 <3.0.0'
 
 dependencies:
   flutter:
@@ -25,3 +25,4 @@ flutter:
   assets:
     - vega_lite_specs/
     - js/
+    - lib/examples/
