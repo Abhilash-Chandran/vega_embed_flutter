@@ -85,9 +85,9 @@ class BarChart extends StatelessWidget {
 
 # VegaEmbed Options [WIP]
 
-Following vega-embed options are tested and are available as part of demo page. If you need further comprehensive options to be tested enabled please do raise and issue so that I can spend time on options which are necessary.
+Following vega-embed options are tested and are available as part of demo page. If you need further comprehensive options to be tested or enabled please do raise and issue so that I can spend time on options which are necessary.
 
-For a detailed description of what each vega emabed options check this page.
+For a detailed description of what each vega embed options check this page.
 https://github.com/vega/vega-embed#options
 
 |  Embed Options   |      Working       |                                          Comments                                          |
