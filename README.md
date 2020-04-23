@@ -104,7 +104,7 @@ https://github.com/vega/vega-embed#options
 |      height      | :heavy_check_mark: |                  Note: :warning: Height mentioned in spec overrides this.                  |
 |     padding      | :heavy_check_mark: |                                                                                            |
 |     actions      |   :construction:   |    Note: :warning: an example is shown to remove actions. But its not complete to spec.    |
-|   scaleFactor    | :heavy_check_mark: |                                Note: This is a scale factor                                |
+|   scaleFactor    | :heavy_check_mark: |             Note: This is a scale factor for the exported file, not the plot.              |
 |      config      |     :thinking:     | Let me know if you need it. Porting config object to dart will take lot of effort to test. |
 |    editorUrl     |   :construction:   |                                  Avialble but not tested.                                  |
 |   sourceHeader   |   :construction:   |                                  Avialble but not tested.                                  |
