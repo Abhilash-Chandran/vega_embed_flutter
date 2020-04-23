@@ -3,18 +3,13 @@
 
 # vega_embed_flutter
 
-A Flutter widget to embed vega-lite charts to flutter web. Works only in Flutter web as of now. Internall it uses vega-embed js library to embed these specs using JS interops and `HTMLElementView`. Here is an example chart rendered using this package.
+A Flutter widget to embed vega-lite charts to flutter web. Works only in Flutter web as of now. Internall it uses vega-embed js library to embed these specs using JS interops and `HTMLElementView`. A Demo page with examples for available vega-embed options is available below.
 
-![A an example chart](repo_example.png)
+[![A demo page](repo_example.png)](https://abhilash-chandran.github.io/vega_embed_flutter/)
 
-A Demo page with examples for available vega-embed options is available below.
-
-<iframe src='https://abhilash-chandran.github.io/vega_embed_flutter/' width='400px' height='400px'></iframe>
 A full fledged demo page with various charts utilizing this package is avalaible [here](https://abhilash-chandran.github.io/vega_embed_flutter_demo_page/#/)
 
-![Demo Page Gif](interactions.gif)
-
-For a simple example check the examples section.
+[![Demo Page Gif](interactions.gif)](https://abhilash-chandran.github.io/vega_embed_flutter_demo_page/#/)
 
 # Credits
 
@@ -90,6 +85,34 @@ class BarChart extends StatelessWidget {
 
 # VegaEmbed Options [WIP]
 
-Some of the VegaEmbed option like default theming is already working. Remaining option will be tested and documented as and when this package progresses.
+Following vega-embed options are tested and are available as part of demo page. If you need further comprehensive options to be tested enabled please do raise and issue so that I can spend time on options which are necessary.
+
+For a detailed description of what each vega emabed options check this page.
+https://github.com/vega/vega-embed#options
+
+|  Embed Options   |      Working       |                                          Comments                                          |
+| :--------------: | :----------------: | :----------------------------------------------------------------------------------------: |
+|       mode       |   :construction:   |                                  Avialble but not tested.                                  |
+|      theme       |       :100:        |                                                                                            |
+|   defaultStyle   | :heavy_check_mark: |                                                                                            |
+|     renderer     | :heavy_check_mark: |                                                                                            |
+|     logLevel     |   :construction:   |                                                                                            |
+|     tooltip      |     :thinking:     |                                 Let me know if you need it                                 |
+|      loader      |        :x:         |                                                                                            |
+|      patch       |        :x:         |                                                                                            |
+|      width       | :heavy_check_mark: |                  Note: :warning: width mentioned in spec overrides this.                   |
+|      height      | :heavy_check_mark: |                  Note: :warning: Height mentioned in spec overrides this.                  |
+|     padding      | :heavy_check_mark: |                                                                                            |
+|     actions      |   :construction:   |    Note: :warning: an example is shown to remove actions. But its not complete to spec.    |
+|   scaleFactor    | :heavy_check_mark: |                                Note: This is a scale factor                                |
+|      config      |     :thinking:     | Let me know if you need it. Porting config object to dart will take lot of effort to test. |
+|    editorUrl     |   :construction:   |                                  Avialble but not tested.                                  |
+|   sourceHeader   |   :construction:   |                                  Avialble but not tested.                                  |
+|   sourceFooter   |   :construction:   |                                  Avialble but not tested.                                  |
+|      hover       |     :thinking:     |                                Let me know if you need it.                                 |
+|       i18n       | :heavy_check_mark: |                                                                                            |
+| downloadFileName | :heavy_check_mark: |                                                                                            |
+|   formatLocale   |   :construction:   |                                  Avialble but not tested.                                  |
+| timeFormatLocale |   :construction:   |                                  Avialble but not tested.                                  |
 
 #### Any kind of code, idea, suggestions are welcome. Please check the repository and file your feedbacks and bugs which is highly appreciated.
