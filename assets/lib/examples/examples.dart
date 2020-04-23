@@ -6,3 +6,6 @@ export 'example5.dart';
 export 'example6.dart';
 export 'example7.dart';
 export 'example8.dart';
+export 'example9.dart';
+export 'example10.dart';
+export 'example11.dart';
