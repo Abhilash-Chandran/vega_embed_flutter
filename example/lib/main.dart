@@ -169,7 +169,7 @@ class BarChart extends StatelessWidget {
   Widget build(BuildContext context) {
     return VegaLiteEmbedder(
       viewFactoryId: 'MyBarChart',
-      vegaLiteSpecLocation: '/assets/vega_lite_specs/bar_chart.json',
+      vegaLiteSpecLocation: 'assets/vega_lite_specs/bar_chart.json',
     );
   }
 }
@@ -181,9 +181,8 @@ class InteractiveSplom extends StatelessWidget {
   Widget build(BuildContext context) {
     return VegaLiteEmbedder(
       viewFactoryId: 'MyInteractiveSplom',
-      vegaLiteSpecLocation: '/assets/vega_lite_specs/interactive_splom.json',
+      vegaLiteSpecLocation: 'assets/vega_lite_specs/interactive_splom.json',
       vegaOptions: VegaEmbedOptions(
-        height: 700,
         theme: 'latimes',
       ),
     );
@@ -198,7 +197,7 @@ class InteractiveMultiLineChart extends StatelessWidget {
     return VegaLiteEmbedder(
       viewFactoryId: 'InteractiveMultiLine',
       vegaLiteSpecLocation:
-          '/assets/vega_lite_specs/interactive_multiline_plot.json',
+          'assets/vega_lite_specs/interactive_multiline_plot.json',
       vegaOptions: VegaEmbedOptions(
         theme: 'dark',
       ),

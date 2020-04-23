@@ -9,7 +9,7 @@ class Example1 extends StatelessWidget {
     return VegaLiteEmbedder(
       viewFactoryId: 'example1',
       vegaLiteSpecLocation:
-          '/assets/vega_lite_specs/interactive_multiline_plot.json',
+          'assets/vega_lite_specs/interactive_multiline_plot.json',
       vegaOptions: VegaEmbedOptions(
         theme: 'dark',
       ),

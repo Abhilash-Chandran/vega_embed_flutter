@@ -8,7 +8,7 @@ class Example2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return VegaLiteEmbedder(
       viewFactoryId: 'example2',
-      vegaLiteSpecLocation: '/assets/vega_lite_specs/bar_chart.json',
+      vegaLiteSpecLocation: 'assets/vega_lite_specs/bar_chart.json',
       vegaOptions: VegaEmbedOptions(
         theme: 'latimes',
       ),

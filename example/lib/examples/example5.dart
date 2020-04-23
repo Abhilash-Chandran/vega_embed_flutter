@@ -10,7 +10,7 @@ class Example5 extends StatelessWidget {
     return VegaLiteEmbedder(
       viewFactoryId: UniqueKey().toString(),
       vegaLiteSpecLocation:
-          '/assets/vega_lite_specs/interactive_index_chart.vl.json',
+          'assets/vega_lite_specs/interactive_index_chart.vl.json',
       vegaOptions: VegaEmbedOptions(
         defaultStyle: false,
       ),
