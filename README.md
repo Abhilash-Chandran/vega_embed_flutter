@@ -7,6 +7,9 @@ A Flutter widget to embed vega-lite charts to flutter web. Works only in Flutter
 
 ![A an example chart](repo_example.png)
 
+A Demo page with examples for available vega-embed options is available below.
+
+<iframe src='https://abhilash-chandran.github.io/vega_embed_flutter/' width='400px' height='400px'></iframe>
 A full fledged demo page with various charts utilizing this package is avalaible [here](https://abhilash-chandran.github.io/vega_embed_flutter_demo_page/#/)
 
 ![Demo Page Gif](interactions.gif)
