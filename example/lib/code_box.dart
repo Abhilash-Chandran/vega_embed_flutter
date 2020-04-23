@@ -59,6 +59,7 @@ class _CodeBoxState extends State<CodeBox> {
       ..id = '${widget.viewId}_ID'
       ..src = src
       ..style.border = '0';
+    // ignore: undefined_prefixed_name
     ui.platformViewRegistry.registerViewFactory(widget.viewId, (int viewId) {
       return iFrameElement;
     });

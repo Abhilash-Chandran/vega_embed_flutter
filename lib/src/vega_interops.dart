@@ -64,10 +64,15 @@ class VegaEmbedOptions {
 @anonymous
 class I18N {
   external factory I18N({
+    //ignore: non_constant_identifier_names
     String COMPILED_ACTION,
+    //ignore: non_constant_identifier_names
     String EDITOR_ACTION,
+    //ignore: non_constant_identifier_names
     String PNG_ACTION,
+    //ignore: non_constant_identifier_names
     String SOURCE_ACTION,
+    //ignore: non_constant_identifier_names
     String SVG_ACTION,
   });
 }

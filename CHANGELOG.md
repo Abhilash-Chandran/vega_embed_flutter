@@ -1,8 +1,9 @@
-## [0.5.0] - [0.5.0+1] 23 April 2020.
+## [0.5.0] - [0.5.0+2] 23 April 2020.
 
 - Added more vega embed options and tested.
 - Added more examples for embed options.
 - Now the demo page includes code samples.
+- Edited the example md to include live page and corrected some spelling errors.
 
 ## [0.1.1+1] - [0.1.1+3] 17 March 2020.
 

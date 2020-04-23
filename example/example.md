@@ -4,7 +4,7 @@ This is an example flutter web app which renders multiple vega-lite specs in one
 
 ## Running the example from the repo.
 
-The below can be run by changin into the example folder and running for web using the following commands.
+This example can be run by changing into the example folder and running for web using the following commands.
 
 ```text
 $> git clone https://github.com/Abhilash-Chandran/vega_embed_flutter.git
@@ -12,11 +12,12 @@ $> cd vega_embed_flutter/example
 $> flutter run -d chrome
 ```
 
-This will run the availale example and open a browser with the predefined charts embeded using `VegaLiteEmbedde` widget.
+This will run the availale example and open a browser with the predefined charts embeded using `VegaLiteEmbedder` widget.
 
 ## Result of repo example.
 
-The example from the repo showcase multiple charts being laid out in a single page with different default theming options provided by the vega-embed project.
+The example from the repo showcase multiple charts being laid out in a single page with different default theming options provided by the vega-embed project. It additionally shows the embed options demo page. A live version of this page can be found here.
+[https://abhilash-chandran.github.io/vega_embed_flutter/#/](https://abhilash-chandran.github.io/vega_embed_flutter/#/)
 
 ![Repo example output](repo_example.png)
 
@@ -194,7 +195,7 @@ class BarChart extends StatelessWidget {
     return VegaLiteEmbedder(
       viewFactoryId: 'MyBarChart',
       vegaLiteSpecLocation: '/assets/vega_lite_specs/bar_chart.json',
-      vegaOptions: VegaEmbedOptions()..theme = 'dark',
+      vegaOptions: VegaEmbedOptions(theme: 'dark'),
     );
   }
 }
