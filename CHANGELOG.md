@@ -1,4 +1,4 @@
-## [0.5.0] 23 April 2020.
+## [0.5.0] - [0.5.0+1] 23 April 2020.
 
 - Added more vega embed options and tested.
 - Added more examples for embed options.
@@ -31,6 +31,7 @@
   - Interactions works as well.
 
 TODO:
+
 - Enable flutter webview to support mobile platform.
 - Extend vega-embed options to fully suport all options.
 - [x] ~~Provide more vega-lite references.~~
