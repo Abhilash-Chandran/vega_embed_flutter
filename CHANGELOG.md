@@ -31,12 +31,12 @@
   - Interactions works as well.
 
 TODO:
-
-- Provide more vega-lite references.
-- Document the theming section
-- Add a section vega-embed options.
+- Enable flutter webview to support mobile platform.
 - Extend vega-embed options to fully suport all options.
-- ~~Add a definitve and documented demo. A basic example is available in the exampe folder.~~
-- ~~Set up a live page with mutltitude of charts.~~
-- ~~Enable vega-embed theming.~~
-- ~~Work on rendering multiple charts in the same page.~~
+- [x] ~~Provide more vega-lite references.~~
+- [x] ~~Document the theming section~~
+- [x] ~~Add a section vega-embed options.~~
+- [x] ~~Add a definitve and documented demo. A basic example is available in the exampe folder.~~
+- [x] ~~Set up a live page with mutltitude of charts.~~
+- [x] ~~Enable vega-embed theming.~~
+- [x] ~~Work on rendering multiple charts in the same page.~~
