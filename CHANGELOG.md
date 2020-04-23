@@ -1,3 +1,9 @@
+## [0.5.0] 23 April 2020.
+
+- Added more vega embed options and tested.
+- Added more examples for embed options.
+- Now the demo page includes code samples.
+
 ## [0.1.1+1] - [0.1.1+3] 17 March 2020.
 
 - edited the example section.

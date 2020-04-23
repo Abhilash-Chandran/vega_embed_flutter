@@ -90,29 +90,29 @@ Following vega-embed options are tested and are available as part of demo page. 
 For a detailed description of what each vega embed options check this page.
 https://github.com/vega/vega-embed#options
 
-|  Embed Options   |      Working       |                                          Comments                                          |
-| :--------------: | :----------------: | :----------------------------------------------------------------------------------------: |
-|       mode       |   :construction:   |                                  Avialble but not tested.                                  |
-|      theme       |       :100:        |                                                                                            |
-|   defaultStyle   | :heavy_check_mark: |                                                                                            |
-|     renderer     | :heavy_check_mark: |                                                                                            |
-|     logLevel     |   :construction:   |                                                                                            |
-|     tooltip      |     :thinking:     |                                 Let me know if you need it                                 |
-|      loader      |        :x:         |                                                                                            |
-|      patch       |        :x:         |                                                                                            |
-|      width       | :heavy_check_mark: |                  Note: :warning: width mentioned in spec overrides this.                   |
-|      height      | :heavy_check_mark: |                  Note: :warning: Height mentioned in spec overrides this.                  |
-|     padding      | :heavy_check_mark: |                                                                                            |
-|     actions      |   :construction:   |    Note: :warning: an example is shown to remove actions. But its not complete to spec.    |
-|   scaleFactor    | :heavy_check_mark: |             Note: This is a scale factor for the exported file, not the plot.              |
-|      config      |     :thinking:     | Let me know if you need it. Porting config object to dart will take lot of effort to test. |
-|    editorUrl     |   :construction:   |                                  Avialble but not tested.                                  |
-|   sourceHeader   |   :construction:   |                                  Avialble but not tested.                                  |
-|   sourceFooter   |   :construction:   |                                  Avialble but not tested.                                  |
-|      hover       |     :thinking:     |                                Let me know if you need it.                                 |
-|       i18n       | :heavy_check_mark: |                                                                                            |
-| downloadFileName | :heavy_check_mark: |                                                                                            |
-|   formatLocale   |   :construction:   |                                  Avialble but not tested.                                  |
-| timeFormatLocale |   :construction:   |                                  Avialble but not tested.                                  |
+|  Embed Options   |      Working       |                                                                                                  Comments                                                                                                  |
+| :--------------: | :----------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|       mode       |   :construction:   |                                                                                          Avialble but not tested.                                                                                          |
+|      theme       |       :100:        | Check [here](https://github.com/vega/vega-themes#included-themes) for detials on the themes. Valid values are [excel, ggplot2, quartz, vox, fivethirtyeight , dark, latimes, urbaninstitute, googlecharts] |
+|   defaultStyle   | :heavy_check_mark: |                                                                                                                                                                                                            |
+|     renderer     | :heavy_check_mark: |                                                                                                                                                                                                            |
+|     logLevel     |   :construction:   |                                                                                                                                                                                                            |
+|     tooltip      |     :thinking:     |                                                                                         Let me know if you need it                                                                                         |
+|      loader      |        :x:         |                                                                                                                                                                                                            |
+|      patch       |        :x:         |                                                                                                                                                                                                            |
+|      width       | :heavy_check_mark: |                                                                          Note: :warning: width mentioned in spec overrides this.                                                                           |
+|      height      | :heavy_check_mark: |                                                                          Note: :warning: Height mentioned in spec overrides this.                                                                          |
+|     padding      | :heavy_check_mark: |                                                                                                                                                                                                            |
+|     actions      |   :construction:   |                                                            Note: :warning: an example is shown to remove actions. But its not complete to spec.                                                            |
+|   scaleFactor    | :heavy_check_mark: |                                                                     Note: This is a scale factor for the exported file, not the plot.                                                                      |
+|      config      |     :thinking:     |                                                         Let me know if you need it. Porting config object to dart will take lot of effort to test.                                                         |
+|    editorUrl     |   :construction:   |                                                                                          Avialble but not tested.                                                                                          |
+|   sourceHeader   |   :construction:   |                                                                                          Avialble but not tested.                                                                                          |
+|   sourceFooter   |   :construction:   |                                                                                          Avialble but not tested.                                                                                          |
+|      hover       |     :thinking:     |                                                                                        Let me know if you need it.                                                                                         |
+|       i18n       | :heavy_check_mark: |                                                                                                                                                                                                            |
+| downloadFileName | :heavy_check_mark: |                                                                                                                                                                                                            |
+|   formatLocale   |   :construction:   |                                                                                          Avialble but not tested.                                                                                          |
+| timeFormatLocale |   :construction:   |                                                                                          Avialble but not tested.                                                                                          |
 
 #### Any kind of code, idea, suggestions are welcome. Please check the repository and file your feedbacks and bugs which is highly appreciated.
