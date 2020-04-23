@@ -23171,21 +23171,21 @@ T.MT.prototype={
 $1:function(a){return this.a.d},
 $S:152}
 N.us.prototype={
-F:function(a){return new K.cy("example1","/assets/vega_lite_specs/interactive_multiline_plot.json",{theme:"dark"},null)}}
+F:function(a){return new K.cy("example1","assets/vega_lite_specs/interactive_multiline_plot.json",{theme:"dark"},null)}}
 Z.ut.prototype={
-F:function(a){return new K.cy("example2","/assets/vega_lite_specs/bar_chart.json",{theme:"latimes"},null)}}
+F:function(a){return new K.cy("example2","assets/vega_lite_specs/bar_chart.json",{theme:"latimes"},null)}}
 A.uu.prototype={
-F:function(a){return new K.cy("[#"+Y.aK(new N.e7())+"]","/assets/vega_lite_specs/interactive_multiline_plot.json",{theme:"latimes",width:600,height:400},null)}}
+F:function(a){return new K.cy("[#"+Y.aK(new N.e7())+"]","assets/vega_lite_specs/interactive_multiline_plot.json",{theme:"latimes",width:600,height:400},null)}}
 R.uv.prototype={
-F:function(a){return new K.cy("[#"+Y.aK(new N.e7())+"]","/assets/vega_lite_specs/interactive_multiline_plot.json",{renderer:"svg"},null)}}
+F:function(a){return new K.cy("[#"+Y.aK(new N.e7())+"]","assets/vega_lite_specs/interactive_multiline_plot.json",{renderer:"svg"},null)}}
 Y.uw.prototype={
-F:function(a){return new K.cy("[#"+Y.aK(new N.e7())+"]","/assets/vega_lite_specs/interactive_index_chart.vl.json",{defaultStyle:!1},null)}}
+F:function(a){return new K.cy("[#"+Y.aK(new N.e7())+"]","assets/vega_lite_specs/interactive_index_chart.vl.json",{defaultStyle:!1},null)}}
 X.ux.prototype={
-F:function(a){return new K.cy("[#"+Y.aK(new N.e7())+"]","/assets/vega_lite_specs/interactive_index_chart.vl.json",{defaultStyle:"          .vega-embed .vega-actions a {\n            background: yellow;\n            color:red;\n          }\n        "},null)}}
+F:function(a){return new K.cy("[#"+Y.aK(new N.e7())+"]","assets/vega_lite_specs/interactive_index_chart.vl.json",{defaultStyle:"          .vega-embed .vega-actions a {\n            background: yellow;\n            color:red;\n          }\n        "},null)}}
 V.uy.prototype={
-F:function(a){return new K.cy("[#"+Y.aK(new N.e7())+"]","/assets/vega_lite_specs/interactive_index_chart.vl.json",{padding:{top:50,bottom:100}},null)}}
+F:function(a){return new K.cy("[#"+Y.aK(new N.e7())+"]","assets/vega_lite_specs/interactive_index_chart.vl.json",{padding:{top:50,bottom:100}},null)}}
 F.uz.prototype={
-F:function(a){return new K.cy("[#"+Y.aK(new N.e7())+"]","/assets/vega_lite_specs/bar_chart.json",{i18n:{PNG_ACTION:"PNG Speichern",SOURCE_ACTION:"Source anzeigen",SVG_ACTION:"SVG Speichern"}},null)}}
+F:function(a){return new K.cy("[#"+Y.aK(new N.e7())+"]","assets/vega_lite_specs/bar_chart.json",{i18n:{PNG_ACTION:"PNG Speichern",SOURCE_ACTION:"Source anzeigen",SVG_ACTION:"SVG Speichern"}},null)}}
 F.xt.prototype={
 F:function(a){return new F.mY(null)}}
 F.mY.prototype={
@@ -23223,11 +23223,11 @@ F.vv.prototype={
 F:function(a){var t=null,s=u.E
 return T.Sk(H.b([new T.dK(2,C.aL,T.U3(H.b([new T.dK(1,C.aL,M.eP(t,new F.vb(t),t,t,S.i3(new F.bo(C.k,new Y.cr(C.l4,1,C.E),new Y.cr(C.l4,1,C.E),C.k),t,t,t,t,t,C.O),t,t,t,t),t),new T.dK(1,C.aL,M.eP(t,new F.tc(t),t,t,S.i3(new F.bo(C.k,new Y.cr(C.l4,1,C.E),C.k,C.k),t,t,t,t,t,C.O),t,t,t,t),t)],s),C.jS),t),new T.dK(3,C.aL,new F.vc(t),t)],s),C.fE)}}
 F.tc.prototype={
-F:function(a){return new K.cy("MyBarChart","/assets/vega_lite_specs/bar_chart.json",null,null)}}
+F:function(a){return new K.cy("MyBarChart","assets/vega_lite_specs/bar_chart.json",null,null)}}
 F.vc.prototype={
-F:function(a){return new K.cy("MyInteractiveSplom","/assets/vega_lite_specs/interactive_splom.json",{theme:"latimes",height:700},null)}}
+F:function(a){return new K.cy("MyInteractiveSplom","assets/vega_lite_specs/interactive_splom.json",{theme:"latimes"},null)}}
 F.vb.prototype={
-F:function(a){return new K.cy("InteractiveMultiLine","/assets/vega_lite_specs/interactive_multiline_plot.json",{theme:"dark"},null)}}
+F:function(a){return new K.cy("InteractiveMultiLine","assets/vega_lite_specs/interactive_multiline_plot.json",{theme:"dark"},null)}}
 F.ot.prototype={
 as:function(){return new F.B6(new D.kA(0,H.b([],u.iu),new R.Y(H.b([],u.u),u.A)),P.VC(null,null,null,u.eH),C.l)}}
 F.B6.prototype={

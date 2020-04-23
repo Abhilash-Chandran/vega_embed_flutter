@@ -9,7 +9,7 @@ class Example8 extends StatelessWidget {
   Widget build(BuildContext context) {
     return VegaLiteEmbedder(
       viewFactoryId: UniqueKey().toString(),
-      vegaLiteSpecLocation: '/assets/vega_lite_specs/bar_chart.json',
+      vegaLiteSpecLocation: 'assets/vega_lite_specs/bar_chart.json',
       vegaOptions: VegaEmbedOptions(
         i18n: I18N(
             SVG_ACTION: 'SVG Speichern',
