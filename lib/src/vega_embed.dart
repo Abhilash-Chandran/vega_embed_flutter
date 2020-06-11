@@ -6,6 +6,7 @@ import 'dart:ui' as ui;
 import 'package:vega_embed_flutter/src/vega_interops.dart';
 import 'package:vega_embed_flutter/src/vega-related-css.dart';
 
+
 class VegaLiteEmbedder extends StatefulWidget {
   /// This viewFactory ID should be unique accross elements.
   /// Please ensure this. Otherwise it might result in some unwanted behaviour.
@@ -61,7 +62,7 @@ class _VegaLiteEmbedderState extends State<VegaLiteEmbedder> {
       if (widget.vegaOptions != null) {
         if (widget.vegaOptions.defaultStyle is String) {
           StyleElement embedStyle = StyleElement()
-            ..innerText = widget.vegaOptions.defaultStyle;
+            ..innerText = widget.vegaOptions.defaultStyle.toString();
           bodyElement.append(embedStyle);
         }
         vegaEmbed(divElement, widget.vegaLiteSpecLocation, widget.vegaOptions);

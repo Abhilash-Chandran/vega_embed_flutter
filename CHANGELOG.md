@@ -1,11 +1,16 @@
-## [0.5.0] - [0.5.0+2] 23 April 2020.
+## [0.6.0] - 11 June 2020
+
+- Added support for webview to enable vega lite chart for mobile.
+- utilizes the flutter webview_flutter
+
+## [0.5.0] - [0.5.0+2] - 23 April 2020.
 
 - Added more vega embed options and tested.
 - Added more examples for embed options.
 - Now the demo page includes code samples.
 - Edited the example md to include live page and corrected some spelling errors.
 
-## [0.1.1+1] - [0.1.1+3] 17 March 2020.
+## [0.1.1+1] - [0.1.1+3] - 17 March 2020.
 
 - edited the example section.
 - added git hub actions.

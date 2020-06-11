@@ -18,3 +18,13 @@ jobs:
           channel: "stable"
       - run: flutter pub get
       - run: flutter test
+  publish:
+    name: Publish vega_embed_flutter to pub.dev
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Publish
+        uses: sakebook/actions-flutter-pub-publisher@v1.3.0
+        with:
+          credential: ${{ secrets.CREDENTIAL_JSON }}          

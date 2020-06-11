@@ -2,7 +2,7 @@
 
 This is an example flutter web app which renders multiple vega-lite specs in one page using column and row arrangements.
 
-## Running the example from the repo.
+## Running the flutter web example from the repo.
 
 This example can be run by changing into the example folder and running for web using the following commands.
 
@@ -12,14 +12,28 @@ $> cd vega_embed_flutter/example
 $> flutter run -d chrome
 ```
 
+## Running the flutter webview example from the repo.
+
+This example can be run by changing into the example folder and running for web using the following commands.
+
+```text
+$> git clone https://github.com/Abhilash-Chandran/vega_embed_flutter.git
+$> cd vega_embed_flutter/example
+$> flutter run -t lib\webview_main.dart
+```
+
 This will run the availale example and open a browser with the predefined charts embeded using `VegaLiteEmbedder` widget.
 
-## Result of repo example.
+## Result of repo example for flutter web.
 
 The example from the repo showcase multiple charts being laid out in a single page with different default theming options provided by the vega-embed project. It additionally shows the embed options demo page. A live version of this page can be found here.
 [https://abhilash-chandran.github.io/vega_embed_flutter/#/](https://abhilash-chandran.github.io/vega_embed_flutter/#/)
 
 ![Repo example output](repo_example.png)
+
+## Result of repo example for flutter web view.
+
+![Repo web view example output](web_view_demo.png)
 
 # Getting started with your own chart
 
@@ -57,9 +71,9 @@ Start by adding the `script` tag for vega related java script files. For example
 For example here we can create `bar-chart.vl.json` file under the directory _vega_lite_specs_ as shown below.
 
 ```
- vega*lite_specs
-       |_>  bar-charts.vl.json
-       |_>  another-chart.vl.json
+ $Project_root\vega_lite_specs
+                  |_>  bar-charts.vl.json
+                  |_>  another-chart.vl.json
 ```
 
 ## Add contents to bar-charts.vl.json
@@ -102,6 +116,7 @@ In order to access the above created json as an asset, it must added to the `pub
 flutter:
   assets:
     - vega_lite_specs/ # Note: adds all the specs in this directory but not folders.
+    - vega_lite_specs/other_vega_lite_specs/
     - other_image_assets/
     - miscelaneous_js/custom.js
 ```
@@ -204,3 +219,26 @@ class BarChart extends StatelessWidget {
 Here is how the output looks like
 
 ![demo_dark_bar chart](demo_dark_bar.png)
+
+## Using Vega Embed in a normal flutter app.
+
+For using the same spec files in a normal flutter app we can webview. In order to utilize this All the steps mentioned above except the ones about importing `index.html` can be ignored.
+
+Replace the import statement and Instead of `VegaLitEmbedder` widget use the `VegaLiteWebViewEmbedder` widget as shown below.
+
+```dart
+import 'package:vega_embed_flutter/vega_embed_webview.dart';
+
+
+/// A simple bar chart with dark theme.
+class BarChart extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return VegaLiteWebViewEmbedder(
+      viewFactoryId: 'MyBarChart',
+      vegaLiteSpecLocation: '/assets/vega_lite_specs/bar_chart.json',
+      vegaOptions: VegaEmbedOptions(theme: 'dark'),
+    );
+  }
+}
+```

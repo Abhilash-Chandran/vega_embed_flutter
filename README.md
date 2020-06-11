@@ -3,19 +3,21 @@
 
 # vega_embed_flutter
 
-A Flutter widget to embed vega-lite charts to flutter web. Works only in Flutter web as of now. Internall it uses vega-embed js library to embed these specs using JS interops and `HTMLElementView`. A Demo page with examples for available vega-embed options is available below.
+A Flutter widget to embed vega-lite charts to flutter web and flutter apps using webview_flutter. Works consistently in Flutter web as of now. SInternally it uses vega-embed js library to embed these specs using JS interops and `HTMLElementView`. A Demo page with examples for different vega-embed options is available below.
+
+> Since flutter web_view is still in developer preview, vega_embed flutter web_view support should also be considered as a developer preview.
 
 [![A demo page](repo_example.png)](https://abhilash-chandran.github.io/vega_embed_flutter/)
-
+![Flutter web view demo](web_view_demo.png)
 A full fledged demo page with various charts utilizing this package is avalaible [here](https://abhilash-chandran.github.io/vega_embed_flutter_demo_page/#/)
 
 [![Demo Page Gif](interactions.gif)](https://abhilash-chandran.github.io/vega_embed_flutter_demo_page/#/)
 
 # Credits
 
-This widget is made possible only because of the great works done by the team behind [vega-embed](https://github.com/vega/vega-embed), [vega-Lite](https://vega.github.io/vega-lite/) and [vega](https://vega.github.io/vega/). For a detailed documentation of how visualize using Vega-lite specs please head to their [doumentaition](https://vega.github.io/vega-lite/docs/) page.
+This widget is made possible only because of the great works done by the team behind [vega-embed](https://github.com/vega/vega-embed), [vega-Lite](https://vega.github.io/vega-lite/) and [vega](https://vega.github.io/vega/). For a detailed documentation of how visualize using Vega-lite specs please head to their [doumentation](https://vega.github.io/vega-lite/docs/) page.
 
-# General Setup Steps
+# General Setup Steps for flutter web
 
 ## Import Vega related Javascript files.
 
@@ -39,7 +41,7 @@ Start by adding the `script` tag for vega related java script files. For example
 </html>
 ```
 
-## Add your vega lite schema files
+## Add your vega lite specification files
 
 Vega-Lite and Vega defines its visualsation in the form of json file. So for you project it would be easy to maintain all this vega-lite spec files in a folder say _vega_lite_specs_ folder. For example
 
@@ -83,7 +85,48 @@ class BarChart extends StatelessWidget {
 }
 ```
 
-# VegaEmbed Options [WIP]
+# General set for normal flutter app
+
+Follow the [Add your vega lite schema files](https://pub.dev/packages/vega_embed_flutter#add-your-vega-lite-schema-files) section and [Add assets entry in pupspec.yaml](https://pub.dev/packages/vega_embed_flutter#add-assets-entry-in-pupspecyaml) as mentioned above.
+
+## Import web view specific file and use the widget
+
+Import the vega embed view specific librarys as below
+`import 'package:vega_embed_flutter/vega_embed_webview.dart';`
+
+Create a normal stateless/ful widget and use it as a normal stateless/ful widget.
+
+```
+class ExampleWebViewApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: SafeArea(
+        child: Center(
+          child: Column(
+            children: [
+              Expanded(
+                child: VegaLiteWebViewEmbedder(
+                  vegaLiteSpecLocation: 'vega_lite_specs/bar_chart copy.json',
+                ),
+              ),
+              Expanded(
+                child: VegaLiteWebViewEmbedder(
+                  vegaLiteSpecLocation:
+                      'vega_lite_specs/interactive_index_chart.vl.json',
+                  vegaEmbedOptions: VegaEmbedOptions(theme: 'dark'),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+# VegaEmbed Options [WIP](available only for web)
 
 Following vega-embed options are tested and are available as part of demo page. If you need further comprehensive options to be tested or enabled please do raise and issue so that I can spend time on options which are necessary.
 
