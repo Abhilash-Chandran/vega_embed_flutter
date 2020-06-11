@@ -20,6 +20,7 @@ jobs:
       - run: flutter test
   publish:
     name: Publish vega_embed_flutter to pub.dev
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,4 +28,5 @@ jobs:
       - name: Publish
         uses: sakebook/actions-flutter-pub-publisher@v1.3.0
         with:
-          credential: ${{ secrets.CREDENTIAL_JSON }}          
+          credential: ${{ secrets.CREDENTIAL_JSON }}
+          skip_test: true      
