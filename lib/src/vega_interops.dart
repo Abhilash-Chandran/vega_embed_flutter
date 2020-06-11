@@ -41,23 +41,23 @@ class VegaEmbedOptions {
     FormatLocale formatLocale,
     TimeFormatLocale timeFormatLocale,
   });
-  external get mode;
-  external get theme;
-  external get defaultStyle;
-  external get renderer;
-  external get toolTip;
-  external get width;
-  external get height;
-  external get padding;
-  external get actions;
-  external get scaleFactor;
-  external get editorUrl;
-  external get sourceHeader;
-  external get downloadFileName;
-  external get formatLocale;
-  external get timeFormatLocale;
-  external get logLevel;
-  external get i18n;
+  external String get mode;
+  external String get theme;
+  external dynamic get defaultStyle;
+  external String get renderer;
+  external dynamic get toolTip;
+  external num get width;
+  external num get height;
+  external Padding get padding;
+  external Actions get actions;
+  external num get scaleFactor;
+  external String get editorUrl;
+  external String get sourceHeader;
+  external String get downloadFileName;
+  external FormatLocale get formatLocale;
+  external TimeFormatLocale get timeFormatLocale;
+  external LogLevel get logLevel;
+  external I18N get i18n;
 }
 
 @JS()
@@ -94,10 +94,10 @@ class Padding {
     num top,
     num bottom,
   });
-  external get left;
-  external get right;
-  external get top;
-  external get bottom;
+  external num get left;
+  external num get right;
+  external num get top;
+  external num get bottom;
 }
 
 @JS()
@@ -110,10 +110,10 @@ class Actions {
     bool compiled = false,
   });
 
-  external get editor;
-  external get export;
-  external get source;
-  external get compiled;
+  external bool get editor;
+  external bool get export;
+  external bool get source;
+  external bool get compiled;
 }
 
 @JS()
@@ -127,11 +127,11 @@ class FormatLocale {
     List<String> numerals,
   });
 
-  external get decimal;
-  external get thousands;
-  external get groupings;
-  external get currency;
-  external get numerals;
+  external String get decimal;
+  external String get thousands;
+  external List<num> get groupings;
+  external List<String> get currency;
+  external List<String>get numerals;
 }
 
 @JS()
@@ -148,12 +148,12 @@ class TimeFormatLocale {
     List<String> shortMonths,
   });
 
-  external get dateTime;
-  external get date;
-  external get time;
-  external get periods;
-  external get days;
-  external get shortDays;
-  external get months;
-  external get shortMonths;
+  external String get dateTime;
+  external String get date;
+  external String get time;
+  external List<String> get periods;
+  external List<String> get days;
+  external List<String> get shortDays;
+  external List<String> get months;
+  external List<String> get shortMonths;
 }

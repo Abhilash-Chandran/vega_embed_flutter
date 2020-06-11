@@ -14,8 +14,7 @@ class VegaLiteWebViewEmbedder extends StatefulWidget {
   /// Set of options for vegaEmbeder. Please check the documentation of vega-embed for more info.
   /// This is dartified version of the options avaailable.
   VegaLiteWebViewEmbedder({
-    @required
-    this.vegaLiteSpecLocation,
+    @required this.vegaLiteSpecLocation,
     this.vegaEmbedOptions,
   }) : assert(vegaLiteSpecLocation != null, 'Provide a vegalitespeclocation.');
   @override
