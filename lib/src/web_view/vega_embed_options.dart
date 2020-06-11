@@ -36,16 +36,11 @@ abstract class VegaEmbedOptions with _$VegaEmbedOptions {
 
 @freezed
 abstract class I18N with _$I18N {
-  factory I18N({
-    //ignore: non_constant_identifier_names
-    String COMPILED_ACTION,
-    //ignore: non_constant_identifier_names
+  factory I18N({    
+    String COMPILED_ACTION,    
     String EDITOR_ACTION,
-    //ignore: non_constant_identifier_names
     String PNG_ACTION,
-    //ignore: non_constant_identifier_names
     String SOURCE_ACTION,
-    //ignore: non_constant_identifier_names
     String SVG_ACTION,
   }) = _I18N;
   factory I18N.fromJson(Map<String, dynamic> json) => _$I18NFromJson(json);

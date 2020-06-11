@@ -1,3 +1,7 @@
-analyzer:  
+include: package:pedantic/analysis_options.yaml
+
+analyzer:
   exclude:
+    - lib/src/vega_interops.dart
     - lib/src/web_view/*.g.dart
+    - lib/src/web_view/*.freezed.dart

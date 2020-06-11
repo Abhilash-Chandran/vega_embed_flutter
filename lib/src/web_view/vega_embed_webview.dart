@@ -14,6 +14,7 @@ class VegaLiteWebViewEmbedder extends StatefulWidget {
   /// Set of options for vegaEmbeder. Please check the documentation of vega-embed for more info.
   /// This is dartified version of the options avaailable.
   VegaLiteWebViewEmbedder({
+    @required
     this.vegaLiteSpecLocation,
     this.vegaEmbedOptions,
   }) : assert(vegaLiteSpecLocation != null, 'Provide a vegalitespeclocation.');
@@ -30,11 +31,11 @@ class _VegaLiteWebViewEmbedderState extends State<VegaLiteWebViewEmbedder> {
           .loadString(widget.vegaLiteSpecLocation),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          String _divId = 'plot_div';
-          String vegaEmbedScript = widget.vegaEmbedOptions == null
+          var _divId = 'plot_div';
+          var vegaEmbedScript = widget.vegaEmbedOptions == null
               ? 'vegaEmbed("#$_divId", ${snapshot.data})'
               : 'vegaEmbed("#$_divId", ${snapshot.data}, ${json.encode(widget.vegaEmbedOptions.toJson())})';
-          String html = '''
+          var html = '''
         <!DOCTYPE html>
         <html lang="en">
           <head>
@@ -56,7 +57,7 @@ class _VegaLiteWebViewEmbedderState extends State<VegaLiteWebViewEmbedder> {
                 print(error);
               },
               onWebViewCreated: (WebViewController webViewController) {
-                webViewController.loadUrl("data:text/html;charset=utf-8," +
+                webViewController.loadUrl('data:text/html;charset=utf-8,' +
                     Uri.encodeComponent(html));
               });
         }

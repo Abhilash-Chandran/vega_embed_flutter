@@ -6,7 +6,6 @@ import 'dart:ui' as ui;
 import 'package:vega_embed_flutter/src/vega_interops.dart';
 import 'package:vega_embed_flutter/src/vega-related-css.dart';
 
-
 class VegaLiteEmbedder extends StatefulWidget {
   /// This viewFactory ID should be unique accross elements.
   /// Please ensure this. Otherwise it might result in some unwanted behaviour.
@@ -21,7 +20,7 @@ class VegaLiteEmbedder extends StatefulWidget {
   final VegaEmbedOptions vegaOptions;
   VegaLiteEmbedder({
     @required this.viewFactoryId,
-    this.vegaLiteSpecLocation,
+    @required this.vegaLiteSpecLocation,
     this.vegaOptions,
   })  : assert(vegaLiteSpecLocation != null, 'Provide a vegalitespeclocation.'),
         assert(viewFactoryId != null);
@@ -45,8 +44,8 @@ class _VegaLiteEmbedderState extends State<VegaLiteEmbedder> {
     bodyElement.append(divElement);
 
     // Add the css style elements to renders plots options properly.
-    StyleElement vegaEmbedStyle = StyleElement()..text = VegaEmbedStyle;
-    StyleElement vegaToolTipStyle = StyleElement()..text = VegaToolTipStyle;
+    var vegaEmbedStyle = StyleElement()..text = VegaEmbedStyle;
+    var vegaToolTipStyle = StyleElement()..text = VegaToolTipStyle;
     bodyElement.append(vegaEmbedStyle);
     bodyElement.append(vegaToolTipStyle);
   }
@@ -61,7 +60,7 @@ class _VegaLiteEmbedderState extends State<VegaLiteEmbedder> {
     if (widget.vegaLiteSpecLocation != null) {
       if (widget.vegaOptions != null) {
         if (widget.vegaOptions.defaultStyle is String) {
-          StyleElement embedStyle = StyleElement()
+          var embedStyle = StyleElement()
             ..innerText = widget.vegaOptions.defaultStyle.toString();
           bodyElement.append(embedStyle);
         }
