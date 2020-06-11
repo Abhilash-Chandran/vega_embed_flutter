@@ -1,4 +1,4 @@
-## [0.6.0] - 11 June 2020
+## [0.6.0] - [0.6.0+1] 11 June 2020
 
 - Added support for webview to enable vega lite chart for mobile.
 - utilizes the flutter webview_flutter
