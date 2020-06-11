@@ -14,10 +14,9 @@ jobs:
           java-version: "12.x"
       - uses: subosito/flutter-action@v1
         with:
-          flutter-version: "1.17.x"
           channel: "stable"
       - run: flutter pub get
-      - run: flutter test
+            
   publish:
     name: Publish vega_embed_flutter to pub.dev
     needs: build
