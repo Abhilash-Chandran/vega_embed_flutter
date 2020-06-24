@@ -4,7 +4,7 @@
     "url": "https://raw.githubusercontent.com/vega/vega/master/docs/data/stocks.csv",
     "format": { "parse": { "date": "date" } }
   },
-  "width": 500,
+  "width": 250,
   "height": 300,
   "layer": [
     {
