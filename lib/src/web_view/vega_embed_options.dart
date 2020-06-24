@@ -37,8 +37,8 @@ abstract class VegaEmbedOptions with _$VegaEmbedOptions {
 
 @freezed
 abstract class I18N with _$I18N {
-  factory I18N({    
-    String COMPILED_ACTION,    
+  factory I18N({
+    String COMPILED_ACTION,
     String EDITOR_ACTION,
     String PNG_ACTION,
     String SOURCE_ACTION,

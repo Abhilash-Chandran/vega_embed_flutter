@@ -1,3 +1,8 @@
+## [0.6.0+3] 24 June 2020
+
+- Upgraded freezed package version.
+- Edited the example demo page.
+
 ## [0.6.0] - [0.6.0+2] 11 June 2020
 
 - Added support for webview to enable vega lite chart for mobile.

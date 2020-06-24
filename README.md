@@ -3,16 +3,20 @@
 
 # vega_embed_flutter
 
-A Flutter widget to embed vega-lite charts to flutter web and flutter apps using webview_flutter. Works consistently in Flutter web as of now. SInternally it uses vega-embed js library to embed these specs using JS interops and `HTMLElementView`. A Demo page with examples for different vega-embed options is available below.
+A Flutter widget to embed vega-lite charts to flutter web and flutter apps using webview_flutter. Works consistently in Flutter web as of now. SInternally it uses vega-embed js library to embed these specs using JS interops and `HTMLElementView`. 
 
-> Since flutter web_view is still in developer preview, vega_embed flutter web_view support should also be considered as a developer preview.
+A Demo page with examples for different vega-embed options is available below.
+
+https://abhilash-chandran.github.io/vega_embed_flutter/
 
 [![A demo page](repo_example.png)](https://abhilash-chandran.github.io/vega_embed_flutter/)
-![Flutter web view demo](web_view_demo.png)
+
 A full fledged demo page with various charts utilizing this package is avalaible [here](https://abhilash-chandran.github.io/vega_embed_flutter_demo_page/#/)
 
 [![Demo Page Gif](interactions.gif)](https://abhilash-chandran.github.io/vega_embed_flutter_demo_page/#/)
 
+> Since flutter web_view is still in developer preview, vega_embed_flutter's web_view support should also be considered as a developer preview.
+![Flutter web view demo](web_view_demo.png)
 # Credits
 
 This widget is made possible only because of the great works done by the team behind [vega-embed](https://github.com/vega/vega-embed), [vega-Lite](https://vega.github.io/vega-lite/) and [vega](https://vega.github.io/vega/). For a detailed documentation of how visualize using Vega-lite specs please head to their [doumentation](https://vega.github.io/vega-lite/docs/) page.

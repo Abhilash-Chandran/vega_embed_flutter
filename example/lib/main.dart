@@ -65,7 +65,7 @@ class _ExampleAppState extends State<ExampleApp>
                       });
                     },
                     color: selectedIndex == 0
-                        ? Colors.transparent
+                        ? Colors.orangeAccent
                         : Colors.amber[100],
                     child: Text(
                       'Plots Demo',
@@ -87,7 +87,7 @@ class _ExampleAppState extends State<ExampleApp>
                   padding: EdgeInsets.symmetric(horizontal: 6.0),
                   child: FlatButton(
                     color: selectedIndex == 1
-                        ? Colors.transparent
+                        ? Colors.orangeAccent
                         : Colors.amber[100],
                     onPressed: () {
                       setState(() {
@@ -213,14 +213,18 @@ class PlotWithOptions extends StatefulWidget {
 class _PlotWithOptionsState extends State<PlotWithOptions> {
   PageController _pageController = PageController();
   StreamController<List<int>> _pageIndexStreamCntlr =
-      StreamController<List<int>>();
+      StreamController<List<int>>.broadcast();
   Stream<List<int>> pageIndexStream;
   @override
   void initState() {
     super.initState();
     pageIndexStream = _pageIndexStreamCntlr.stream;
-    // Setting first page.
-    _pageIndexStreamCntlr.add([1, 14, 14]);
+    Future.delayed(
+        Duration(
+          milliseconds: 16,
+        ), () {
+      _pageIndexStreamCntlr.add([1, 14, 14]);
+    });
   }
 
   @override
@@ -340,7 +344,7 @@ class _PlotWithOptionsState extends State<PlotWithOptions> {
         Expanded(
           flex: 5,
           child: StreamBuilder(
-            stream: pageIndexStream,
+            stream: _pageIndexStreamCntlr.stream,
             builder: (context, strmSanp) {
               if (strmSanp.hasData) {
                 bundle = DefaultAssetBundle.of(context);
@@ -393,15 +397,27 @@ class ListButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-        onTap: () {
-          controller.jumpToPage(index);
-          _pageIndexController.add([index + 1, hlStart, hlEnd]);
-          // _pageIndexController.add(index + 1);
-        },
-        child: ListTile(
-          title: Text(label),
-        ));
+    Widget _child = InkWell(
+      onTap: () {
+        controller.jumpToPage(index);
+        _pageIndexController.add([index + 1, hlStart, hlEnd]);
+        // _pageIndexController.add(index + 1);
+      },
+      child: ListTile(
+        title: Text(label),
+      ),
+    );
+    return StreamBuilder<List<int>>(
+        stream: _pageIndexController.stream,
+        builder: (context, snapshot) {
+          if (snapshot.hasData && snapshot.data[0] == index + 1) {
+            return Ink(
+              color: Colors.orangeAccent,
+              child: _child,
+            );
+          }
+          return _child;
+        });
   }
 }
 

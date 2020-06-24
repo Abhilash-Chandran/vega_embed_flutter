@@ -3,9 +3,6 @@ library vega_interops;
 
 import 'package:js/js.dart';
 
-@JS('JSON.parse')
-external dynamic parse(dynamic);
-
 @JS('vegaEmbed')
 external void vegaEmbed(dynamic domElement, String vegaSchema,
     [VegaEmbedOptions vegaEmbedOptions]);
@@ -131,7 +128,7 @@ class FormatLocale {
   external String get thousands;
   external List<num> get groupings;
   external List<String> get currency;
-  external List<String>get numerals;
+  external List<String> get numerals;
 }
 
 @JS()
