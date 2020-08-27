@@ -25,7 +25,7 @@ _$_VegaEmbedOptions _$_$_VegaEmbedOptionsFromJson(Map<String, dynamic> json) {
     scaleFactor: json['scaleFactor'] as num,
     editorUrl: json['editorUrl'] as String,
     sourceHeader: json['sourceHeader'] as String,
-    sourceFoorter: json['sourceFoorter'] as String,
+    sourceFooter: json['sourceFooter'] as String,
     i18n: json['i18n'] == null
         ? null
         : I18N.fromJson(json['i18n'] as Map<String, dynamic>),
@@ -56,7 +56,7 @@ Map<String, dynamic> _$_$_VegaEmbedOptionsToJson(
       'scaleFactor': instance.scaleFactor,
       'editorUrl': instance.editorUrl,
       'sourceHeader': instance.sourceHeader,
-      'sourceFoorter': instance.sourceFoorter,
+      'sourceFooter': instance.sourceFooter,
       'i18n': instance.i18n,
       'downloadFileName': instance.downloadFileName,
       'formatLocale': instance.formatLocale,

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'vega_embed_options.dart';
 
@@ -15,6 +15,7 @@ VegaEmbedOptions _$VegaEmbedOptionsFromJson(Map<String, dynamic> json) {
 class _$VegaEmbedOptionsTearOff {
   const _$VegaEmbedOptionsTearOff();
 
+// ignore: unused_element
   _VegaEmbedOptions call(
       {String mode,
       String theme,
@@ -29,7 +30,7 @@ class _$VegaEmbedOptionsTearOff {
       num scaleFactor,
       String editorUrl,
       String sourceHeader,
-      String sourceFoorter,
+      String sourceFooter,
       I18N i18n,
       String downloadFileName,
       FormatLocale formatLocale,
@@ -48,7 +49,7 @@ class _$VegaEmbedOptionsTearOff {
       scaleFactor: scaleFactor,
       editorUrl: editorUrl,
       sourceHeader: sourceHeader,
-      sourceFoorter: sourceFoorter,
+      sourceFooter: sourceFooter,
       i18n: i18n,
       downloadFileName: downloadFileName,
       formatLocale: formatLocale,
@@ -74,7 +75,7 @@ mixin _$VegaEmbedOptions {
   num get scaleFactor;
   String get editorUrl;
   String get sourceHeader;
-  String get sourceFoorter;
+  String get sourceFooter;
   I18N get i18n;
   String get downloadFileName;
   FormatLocale get formatLocale;
@@ -102,7 +103,7 @@ abstract class $VegaEmbedOptionsCopyWith<$Res> {
       num scaleFactor,
       String editorUrl,
       String sourceHeader,
-      String sourceFoorter,
+      String sourceFooter,
       I18N i18n,
       String downloadFileName,
       FormatLocale formatLocale,
@@ -138,7 +139,7 @@ class _$VegaEmbedOptionsCopyWithImpl<$Res>
     Object scaleFactor = freezed,
     Object editorUrl = freezed,
     Object sourceHeader = freezed,
-    Object sourceFoorter = freezed,
+    Object sourceFooter = freezed,
     Object i18n = freezed,
     Object downloadFileName = freezed,
     Object formatLocale = freezed,
@@ -163,9 +164,9 @@ class _$VegaEmbedOptionsCopyWithImpl<$Res>
       sourceHeader: sourceHeader == freezed
           ? _value.sourceHeader
           : sourceHeader as String,
-      sourceFoorter: sourceFoorter == freezed
-          ? _value.sourceFoorter
-          : sourceFoorter as String,
+      sourceFooter: sourceFooter == freezed
+          ? _value.sourceFooter
+          : sourceFooter as String,
       i18n: i18n == freezed ? _value.i18n : i18n as I18N,
       downloadFileName: downloadFileName == freezed
           ? _value.downloadFileName
@@ -250,7 +251,7 @@ abstract class _$VegaEmbedOptionsCopyWith<$Res>
       num scaleFactor,
       String editorUrl,
       String sourceHeader,
-      String sourceFoorter,
+      String sourceFooter,
       I18N i18n,
       String downloadFileName,
       FormatLocale formatLocale,
@@ -293,7 +294,7 @@ class __$VegaEmbedOptionsCopyWithImpl<$Res>
     Object scaleFactor = freezed,
     Object editorUrl = freezed,
     Object sourceHeader = freezed,
-    Object sourceFoorter = freezed,
+    Object sourceFooter = freezed,
     Object i18n = freezed,
     Object downloadFileName = freezed,
     Object formatLocale = freezed,
@@ -318,9 +319,9 @@ class __$VegaEmbedOptionsCopyWithImpl<$Res>
       sourceHeader: sourceHeader == freezed
           ? _value.sourceHeader
           : sourceHeader as String,
-      sourceFoorter: sourceFoorter == freezed
-          ? _value.sourceFoorter
-          : sourceFoorter as String,
+      sourceFooter: sourceFooter == freezed
+          ? _value.sourceFooter
+          : sourceFooter as String,
       i18n: i18n == freezed ? _value.i18n : i18n as I18N,
       downloadFileName: downloadFileName == freezed
           ? _value.downloadFileName
@@ -353,7 +354,7 @@ class _$_VegaEmbedOptions
       this.scaleFactor,
       this.editorUrl,
       this.sourceHeader,
-      this.sourceFoorter,
+      this.sourceFooter,
       this.i18n,
       this.downloadFileName,
       this.formatLocale,
@@ -389,7 +390,7 @@ class _$_VegaEmbedOptions
   @override
   final String sourceHeader;
   @override
-  final String sourceFoorter;
+  final String sourceFooter;
   @override
   final I18N i18n;
   @override
@@ -401,7 +402,7 @@ class _$_VegaEmbedOptions
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'VegaEmbedOptions(mode: $mode, theme: $theme, defaultStyle: $defaultStyle, renderer: $renderer, logLevel: $logLevel, tooltip: $tooltip, width: $width, height: $height, padding: $padding, actions: $actions, scaleFactor: $scaleFactor, editorUrl: $editorUrl, sourceHeader: $sourceHeader, sourceFoorter: $sourceFoorter, i18n: $i18n, downloadFileName: $downloadFileName, formatLocale: $formatLocale, timeFormatLocale: $timeFormatLocale)';
+    return 'VegaEmbedOptions(mode: $mode, theme: $theme, defaultStyle: $defaultStyle, renderer: $renderer, logLevel: $logLevel, tooltip: $tooltip, width: $width, height: $height, padding: $padding, actions: $actions, scaleFactor: $scaleFactor, editorUrl: $editorUrl, sourceHeader: $sourceHeader, sourceFooter: $sourceFooter, i18n: $i18n, downloadFileName: $downloadFileName, formatLocale: $formatLocale, timeFormatLocale: $timeFormatLocale)';
   }
 
   @override
@@ -422,7 +423,7 @@ class _$_VegaEmbedOptions
       ..add(DiagnosticsProperty('scaleFactor', scaleFactor))
       ..add(DiagnosticsProperty('editorUrl', editorUrl))
       ..add(DiagnosticsProperty('sourceHeader', sourceHeader))
-      ..add(DiagnosticsProperty('sourceFoorter', sourceFoorter))
+      ..add(DiagnosticsProperty('sourceFooter', sourceFooter))
       ..add(DiagnosticsProperty('i18n', i18n))
       ..add(DiagnosticsProperty('downloadFileName', downloadFileName))
       ..add(DiagnosticsProperty('formatLocale', formatLocale))
@@ -468,9 +469,9 @@ class _$_VegaEmbedOptions
             (identical(other.sourceHeader, sourceHeader) ||
                 const DeepCollectionEquality()
                     .equals(other.sourceHeader, sourceHeader)) &&
-            (identical(other.sourceFoorter, sourceFoorter) ||
+            (identical(other.sourceFooter, sourceFooter) ||
                 const DeepCollectionEquality()
-                    .equals(other.sourceFoorter, sourceFoorter)) &&
+                    .equals(other.sourceFooter, sourceFooter)) &&
             (identical(other.i18n, i18n) ||
                 const DeepCollectionEquality().equals(other.i18n, i18n)) &&
             (identical(other.downloadFileName, downloadFileName) ||
@@ -500,7 +501,7 @@ class _$_VegaEmbedOptions
       const DeepCollectionEquality().hash(scaleFactor) ^
       const DeepCollectionEquality().hash(editorUrl) ^
       const DeepCollectionEquality().hash(sourceHeader) ^
-      const DeepCollectionEquality().hash(sourceFoorter) ^
+      const DeepCollectionEquality().hash(sourceFooter) ^
       const DeepCollectionEquality().hash(i18n) ^
       const DeepCollectionEquality().hash(downloadFileName) ^
       const DeepCollectionEquality().hash(formatLocale) ^
@@ -531,7 +532,7 @@ abstract class _VegaEmbedOptions implements VegaEmbedOptions {
       num scaleFactor,
       String editorUrl,
       String sourceHeader,
-      String sourceFoorter,
+      String sourceFooter,
       I18N i18n,
       String downloadFileName,
       FormatLocale formatLocale,
@@ -567,7 +568,7 @@ abstract class _VegaEmbedOptions implements VegaEmbedOptions {
   @override
   String get sourceHeader;
   @override
-  String get sourceFoorter;
+  String get sourceFooter;
   @override
   I18N get i18n;
   @override
@@ -587,6 +588,7 @@ I18N _$I18NFromJson(Map<String, dynamic> json) {
 class _$I18NTearOff {
   const _$I18NTearOff();
 
+// ignore: unused_element
   _I18N call(
       {String COMPILED_ACTION,
       String EDITOR_ACTION,
@@ -818,6 +820,7 @@ Padding _$PaddingFromJson(Map<String, dynamic> json) {
 class _$PaddingTearOff {
   const _$PaddingTearOff();
 
+// ignore: unused_element
   _Padding call({num left, num right, num top, num bottom}) {
     return _Padding(
       left: left,
@@ -989,6 +992,7 @@ Actions _$ActionsFromJson(Map<String, dynamic> json) {
 class _$ActionsTearOff {
   const _$ActionsTearOff();
 
+// ignore: unused_element
   _Actions call(
       {bool editor = true,
       bool export = true,
@@ -1178,6 +1182,7 @@ FormatLocale _$FormatLocaleFromJson(Map<String, dynamic> json) {
 class _$FormatLocaleTearOff {
   const _$FormatLocaleTearOff();
 
+// ignore: unused_element
   _FormLocale call(
       {String decimal,
       String thousands,
@@ -1404,6 +1409,7 @@ TimeFormatLocale _$TimeFormatLocaleFromJson(Map<String, dynamic> json) {
 class _$TimeFormatLocaleTearOff {
   const _$TimeFormatLocaleTearOff();
 
+// ignore: unused_element
   _TimeFormatLocale call(
       {String dateTime,
       String date,

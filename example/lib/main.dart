@@ -344,20 +344,20 @@ class _PlotWithOptionsState extends State<PlotWithOptions> {
           flex: 5,
           child: StreamBuilder(
             stream: _pageIndexStreamCntlr.stream,
-            builder: (context, strmSanp) {
-              if (strmSanp.hasData) {
+            builder: (context, streamSnap) {
+              if (streamSnap.hasData) {
                 bundle = DefaultAssetBundle.of(context);
-                var file = 'lib/examples/example${strmSanp.data[0]}.dart';
+                var file = 'lib/examples/example${streamSnap.data[0]}.dart';
                 return FutureBuilder(
                     future: bundle.loadString(file, cache: true),
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
                         return CodeBox(
                           code: snapshot.data,
-                          viewId: 'codeBox_${strmSanp.data[0]}',
-                          key: ValueKey('codeBox_${strmSanp.data[0]}'),
-                          hlStart: strmSanp.data[1],
-                          hlEnd: strmSanp.data[2],
+                          viewId: 'codeBox_${streamSnap.data[0]}',
+                          key: ValueKey('codeBox_${streamSnap.data[0]}'),
+                          hlStart: streamSnap.data[1],
+                          hlEnd: streamSnap.data[2],
                         );
                       }
                       return Center(

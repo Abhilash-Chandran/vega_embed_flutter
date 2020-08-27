@@ -30,7 +30,7 @@ abstract class VegaEmbedOptions with _$VegaEmbedOptions {
 
     ///
     String sourceHeader,
-    String sourceFoorter,
+    String sourceFooter,
     // todo: define hover,
     I18N i18n,
     String downloadFileName,

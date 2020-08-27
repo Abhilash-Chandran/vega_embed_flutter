@@ -10,19 +10,19 @@ import 'package:vega_embed_flutter/src/vega-related-css.dart';
 /// A Widget that embeds VegaLite charts on to the [HtmlElementView] widget to
 /// bring vega-charts in flutter web.
 class VegaLiteEmbedder extends StatefulWidget {
-  /// This viewFactory ID should be unique accross elements.
-  /// Please ensure this. Otherwise it might result in some unwanted behaviour.
+  /// This viewFactory ID should be unique across elements.
+  /// Please ensure this. Otherwise it might result in some unwanted behavior.
   final String viewFactoryId;
 
   /// This is usually a URL pointing to json file or a json file served as part of your web assets.
   final String vegaLiteSpecLocation;
 
-  /// Set of options for vegaEmbeder. Please check the documentation of vega-embed for more info.
-  /// This is dartified version of the options avaailable.
+  /// Set of options for vegaEmbedder. Please check the documentation of vega-embed for more info.
+  /// This is dartified version of the options available.
   /// Please bear in mind this functionality is not tested and could break easily.
   final VegaEmbedOptions vegaOptions;
 
-  /// Constructor for VegaLiteEmebedder.
+  /// Constructor for VegaLiteEmbedder.
   VegaLiteEmbedder({
     @required this.viewFactoryId,
     @required this.vegaLiteSpecLocation,
@@ -34,7 +34,7 @@ class VegaLiteEmbedder extends StatefulWidget {
 }
 
 class _VegaLiteEmbedderState extends State<VegaLiteEmbedder> {
-  /// The Body elemene which hold the styles and scripts
+  /// The Body element which hold the styles and scripts
   BodyElement bodyElement;
 
   /// The div element where the chart will be embedded
@@ -74,7 +74,7 @@ class _VegaLiteEmbedderState extends State<VegaLiteEmbedder> {
       }
     } else {
       divElement
-          .appendText('Something went wrong. A vega-lite Spec is manadatory.');
+          .appendText('Something went wrong. A vega-lite Spec is mandatory.');
     }
     return HtmlElementView(viewType: widget.viewFactoryId);
   }

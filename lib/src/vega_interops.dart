@@ -186,7 +186,7 @@ class Actions {
     bool compiled = false,
   });
 
-  /// Show open in edtior
+  /// Show open in editor
   external bool get editor;
 
   /// Show export options
