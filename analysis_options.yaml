@@ -3,8 +3,8 @@ include: package:pedantic/analysis_options.1.9.0.yaml
 
 analyzer:
   exclude:    
-    - lib/src/web_view/*.g.dart
-    - lib/src/web_view/*.freezed.dart
+    - 'lib/src/web_view/*.g.dart'
+    - 'lib/src/web_view/*.freezed.dart'
 
 linter:
   rules:

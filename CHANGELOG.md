@@ -1,4 +1,4 @@
-## [0.6.2] 27 August 2020
+## [0.6.2-0.6.3] 27 August 2020
 
 - Some fixes for improving the scores.
 - Remove menu from the webview render of vega charts when no actions provided.
