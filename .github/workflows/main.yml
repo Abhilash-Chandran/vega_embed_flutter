@@ -24,8 +24,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Publish
-        uses: sakebook/actions-flutter-pub-publisher@v1.3.0
+
+      - name: Publish if new
+        id: publish
+        uses: k-paxian/dart-package-publisher@master
         with:
-          credential: ${{ secrets.CREDENTIAL_JSON }}
-          skip_test: true      
+          flutter: true
+          skipTests: true
+          accessToken: ${{ secrets.GAUTH_ACCESS_TOKEN }}
+          refreshToken: ${{ secrets.GAUTH_REFRESH_TOKEN }}
+          suppressBuildRunner: true
+
+      - name: Tag commit
+        if: steps.publish.outputs.success
+        uses: hole19/git-tag-action@master
+        env:
+          TAG: ${{steps.publish.outputs.package}}-${{steps.publish.outputs.localVersion}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}     

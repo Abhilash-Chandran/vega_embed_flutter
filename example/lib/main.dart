@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:vega_embed_flutter/vega_embed_flutter.dart';
 import 'examples/examples.dart';
 import 'code_box.dart';
@@ -211,8 +210,8 @@ class PlotWithOptions extends StatefulWidget {
 }
 
 class _PlotWithOptionsState extends State<PlotWithOptions> {
-  PageController _pageController = PageController();
-  StreamController<List<int>> _pageIndexStreamCntlr =
+  final PageController _pageController = PageController();
+  final StreamController<List<int>> _pageIndexStreamCntlr =
       StreamController<List<int>>.broadcast();
   Stream<List<int>> pageIndexStream;
   @override
@@ -237,7 +236,7 @@ class _PlotWithOptionsState extends State<PlotWithOptions> {
 
   @override
   Widget build(BuildContext context) {
-    AssetBundle bundle = DefaultAssetBundle.of(context);
+    var bundle = DefaultAssetBundle.of(context);
     return Row(
       children: [
         Expanded(
@@ -348,7 +347,7 @@ class _PlotWithOptionsState extends State<PlotWithOptions> {
             builder: (context, strmSanp) {
               if (strmSanp.hasData) {
                 bundle = DefaultAssetBundle.of(context);
-                String file = 'lib/examples/example${strmSanp.data[0]}.dart';
+                var file = 'lib/examples/example${strmSanp.data[0]}.dart';
                 return FutureBuilder(
                     future: bundle.loadString(file, cache: true),
                     builder: (context, snapshot) {

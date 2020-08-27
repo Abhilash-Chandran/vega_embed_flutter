@@ -53,8 +53,7 @@ class _CodeBoxState extends State<CodeBox> {
           </body>
         </html>
         ''';
-    String src =
-        "data:text/html;charset=utf-8," + Uri.encodeComponent(iFrameSrc);
+    var src = 'data:text/html;charset=utf-8,' + Uri.encodeComponent(iFrameSrc);
     iFrameElement
       ..id = '${widget.viewId}_ID'
       ..src = src
