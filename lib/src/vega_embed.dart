@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html';
-mport 'package:vega_embed_flutter/src/fakeui/fake_platformViewRegistry.dart'
+import 'package:vega_embed_flutter/src/fakeui/fake_platformViewRegistry.dart'
     if (dart.library.html) 'dart:ui' as ui;
 
 import 'package:vega_embed_flutter/src/vega_interops.dart';
