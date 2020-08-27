@@ -1,3 +1,9 @@
+## [0.6.2] 27 August 2020
+
+- Some fixes for improving the scores.
+- Remove menu from the webview render of vega charts when no actions provided.
+- add relevant style sheet for vega-embed in webview.
+
 ## [0.6.0+3] 24 June 2020
 
 - Upgraded freezed package version.
@@ -43,12 +49,12 @@
 
 TODO:
 
-- Enable flutter webview to support mobile platform.
-- Extend vega-embed options to fully suport all options.
+- [X] Enable flutter webview to support mobile platform.
+- Extend vega-embed options to fully support all options.
 - [x] ~~Provide more vega-lite references.~~
 - [x] ~~Document the theming section~~
 - [x] ~~Add a section vega-embed options.~~
-- [x] ~~Add a definitve and documented demo. A basic example is available in the exampe folder.~~
-- [x] ~~Set up a live page with mutltitude of charts.~~
+- [x] ~~Add a definitive and documented demo. A basic example is available in the example folder.~~
+- [x] ~~Set up a live page with multitude of charts.~~
 - [x] ~~Enable vega-embed theming.~~
 - [x] ~~Work on rendering multiple charts in the same page.~~
