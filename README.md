@@ -3,7 +3,9 @@
 
 # vega_embed_flutter
 
-A Flutter widget to embed vega-lite charts to flutter web and flutter apps using webview_flutter. Works consistently in Flutter web as of now. SInternally it uses vega-embed js library to embed these specs using JS interops and `HTMLElementView`. 
+A Flutter widget to embed vega-lite charts to flutter web and flutter apps using webview_flutter. Works consistently in Flutter web as of now. Internally it uses vega-embed js library to embed these specs using JS interops and `HTMLElementView`.
+
+Vega-lite charts are visual grammar based charts which are specified using vega-lite specifications in the form of json files. 
 
 A Demo page with examples for different vega-embed options is available below.
 
@@ -11,11 +13,12 @@ https://abhilash-chandran.github.io/vega_embed_flutter/
 
 [![A demo page](repo_example.png)](https://abhilash-chandran.github.io/vega_embed_flutter/)
 
-A full fledged demo page with various charts utilizing this package is avalaible [here](https://abhilash-chandran.github.io/vega_embed_flutter_demo_page/#/)
+A full fledged demo page with various charts utilizing this package is available [here](https://abhilash-chandran.github.io/vega_embed_flutter_demo_page/#/)
 
 [![Demo Page Gif](interactions.gif)](https://abhilash-chandran.github.io/vega_embed_flutter_demo_page/#/)
 
-> Since flutter web_view is still in developer preview, vega_embed_flutter's web_view support should also be considered as a developer preview.
+A webview_flutter based widget is also exposed which allows rendering vega-lite charts in mobile devices.
+This feature is still experimental. Please report any issues in this regard.
 ![Flutter web view demo](web_view_demo.png)
 # Credits
 
@@ -47,7 +50,7 @@ Start by adding the `script` tag for vega related java script files. For example
 
 ## Add your vega lite specification files
 
-Vega-Lite and Vega defines its visualsation in the form of json file. So for you project it would be easy to maintain all this vega-lite spec files in a folder say _vega_lite_specs_ folder. For example
+Vega-Lite and Vega defines its visualization in the form of json file. So for you project it would be easy to maintain all this vega-lite spec files in a folder say _vega_lite_specs_ folder. For example
 
 ```
 $Project_root\vega_lite_specs
@@ -95,7 +98,7 @@ Follow the [Add your vega lite schema files](https://pub.dev/packages/vega_embed
 
 ## Import web view specific file and use the widget
 
-Import the vega embed view specific librarys as below
+Import the vega embed view specific library as shown below
 `import 'package:vega_embed_flutter/vega_embed_webview.dart';`
 
 Create a normal stateless/ful widget and use it as a normal stateless/ful widget.

@@ -8,28 +8,28 @@ part of 'vega_embed_options.dart';
 
 _$_VegaEmbedOptions _$_$_VegaEmbedOptionsFromJson(Map<String, dynamic> json) {
   return _$_VegaEmbedOptions(
-    mode: json['mode'] as String,
-    theme: json['theme'] as String,
+    mode: json['mode'] as String?,
+    theme: json['theme'] as String?,
     defaultStyle: json['defaultStyle'],
-    renderer: json['renderer'] as String,
+    renderer: json['renderer'] as String?,
     logLevel: _$enumDecodeNullable(_$LogLevelEnumMap, json['logLevel']),
     tooltip: json['tooltip'],
-    width: json['width'] as num,
-    height: json['height'] as num,
+    width: json['width'] as num?,
+    height: json['height'] as num?,
     padding: json['padding'] == null
         ? null
         : Padding.fromJson(json['padding'] as Map<String, dynamic>),
     actions: json['actions'] == null
         ? null
         : Actions.fromJson(json['actions'] as Map<String, dynamic>),
-    scaleFactor: json['scaleFactor'] as num,
-    editorUrl: json['editorUrl'] as String,
-    sourceHeader: json['sourceHeader'] as String,
-    sourceFooter: json['sourceFooter'] as String,
+    scaleFactor: json['scaleFactor'] as num?,
+    editorUrl: json['editorUrl'] as String?,
+    sourceHeader: json['sourceHeader'] as String?,
+    sourceFooter: json['sourceFooter'] as String?,
     i18n: json['i18n'] == null
         ? null
         : I18N.fromJson(json['i18n'] as Map<String, dynamic>),
-    downloadFileName: json['downloadFileName'] as String,
+    downloadFileName: json['downloadFileName'] as String?,
     formatLocale: json['formatLocale'] == null
         ? null
         : FormatLocale.fromJson(json['formatLocale'] as Map<String, dynamic>),
@@ -63,36 +63,41 @@ Map<String, dynamic> _$_$_VegaEmbedOptionsToJson(
       'timeFormatLocale': instance.timeFormatLocale,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$LogLevelEnumMap = {
@@ -105,11 +110,11 @@ const _$LogLevelEnumMap = {
 
 _$_I18N _$_$_I18NFromJson(Map<String, dynamic> json) {
   return _$_I18N(
-    COMPILED_ACTION: json['COMPILED_ACTION'] as String,
-    EDITOR_ACTION: json['EDITOR_ACTION'] as String,
-    PNG_ACTION: json['PNG_ACTION'] as String,
-    SOURCE_ACTION: json['SOURCE_ACTION'] as String,
-    SVG_ACTION: json['SVG_ACTION'] as String,
+    COMPILED_ACTION: json['COMPILED_ACTION'] as String?,
+    EDITOR_ACTION: json['EDITOR_ACTION'] as String?,
+    PNG_ACTION: json['PNG_ACTION'] as String?,
+    SOURCE_ACTION: json['SOURCE_ACTION'] as String?,
+    SVG_ACTION: json['SVG_ACTION'] as String?,
   );
 }
 
@@ -123,10 +128,10 @@ Map<String, dynamic> _$_$_I18NToJson(_$_I18N instance) => <String, dynamic>{
 
 _$_Padding _$_$_PaddingFromJson(Map<String, dynamic> json) {
   return _$_Padding(
-    left: json['left'] as num,
-    right: json['right'] as num,
-    top: json['top'] as num,
-    bottom: json['bottom'] as num,
+    left: json['left'] as num?,
+    right: json['right'] as num?,
+    top: json['top'] as num?,
+    bottom: json['bottom'] as num?,
   );
 }
 
@@ -140,10 +145,10 @@ Map<String, dynamic> _$_$_PaddingToJson(_$_Padding instance) =>
 
 _$_Actions _$_$_ActionsFromJson(Map<String, dynamic> json) {
   return _$_Actions(
-    editor: json['editor'] as bool ?? true,
-    export: json['export'] as bool ?? true,
-    source: json['source'] as bool ?? true,
-    compiled: json['compiled'] as bool ?? false,
+    editor: json['editor'] as bool? ?? true,
+    export: json['export'] as bool? ?? true,
+    source: json['source'] as bool? ?? true,
+    compiled: json['compiled'] as bool? ?? false,
   );
 }
 
@@ -157,11 +162,14 @@ Map<String, dynamic> _$_$_ActionsToJson(_$_Actions instance) =>
 
 _$_FormLocale _$_$_FormLocaleFromJson(Map<String, dynamic> json) {
   return _$_FormLocale(
-    decimal: json['decimal'] as String,
-    thousands: json['thousands'] as String,
-    groupings: (json['groupings'] as List)?.map((e) => e as num)?.toList(),
-    currency: (json['currency'] as List)?.map((e) => e as String)?.toList(),
-    numerals: (json['numerals'] as List)?.map((e) => e as String)?.toList(),
+    decimal: json['decimal'] as String?,
+    thousands: json['thousands'] as String?,
+    groupings:
+        (json['groupings'] as List<dynamic>?)?.map((e) => e as num).toList(),
+    currency:
+        (json['currency'] as List<dynamic>?)?.map((e) => e as String).toList(),
+    numerals:
+        (json['numerals'] as List<dynamic>?)?.map((e) => e as String).toList(),
   );
 }
 
@@ -176,15 +184,19 @@ Map<String, dynamic> _$_$_FormLocaleToJson(_$_FormLocale instance) =>
 
 _$_TimeFormatLocale _$_$_TimeFormatLocaleFromJson(Map<String, dynamic> json) {
   return _$_TimeFormatLocale(
-    dateTime: json['dateTime'] as String,
-    date: json['date'] as String,
-    time: json['time'] as String,
-    periods: (json['periods'] as List)?.map((e) => e as String)?.toList(),
-    days: (json['days'] as List)?.map((e) => e as String)?.toList(),
-    shortDays: (json['shortDays'] as List)?.map((e) => e as String)?.toList(),
-    months: (json['months'] as List)?.map((e) => e as String)?.toList(),
-    shortMonths:
-        (json['shortMonths'] as List)?.map((e) => e as String)?.toList(),
+    dateTime: json['dateTime'] as String?,
+    date: json['date'] as String?,
+    time: json['time'] as String?,
+    periods:
+        (json['periods'] as List<dynamic>?)?.map((e) => e as String).toList(),
+    days: (json['days'] as List<dynamic>?)?.map((e) => e as String).toList(),
+    shortDays:
+        (json['shortDays'] as List<dynamic>?)?.map((e) => e as String).toList(),
+    months:
+        (json['months'] as List<dynamic>?)?.map((e) => e as String).toList(),
+    shortMonths: (json['shortMonths'] as List<dynamic>?)
+        ?.map((e) => e as String)
+        .toList(),
   );
 }
 

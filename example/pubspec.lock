@@ -183,7 +183,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.6.3"
+    version: "0.7.0-null-safety"
   webview_flutter:
     dependency: transitive
     description:

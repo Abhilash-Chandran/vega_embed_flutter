@@ -56,16 +56,18 @@ class _ExampleAppState extends State<ExampleApp>
                           ),
                         ),
                   // padding: EdgeInsets.symmetric(horizontal: 6.0),
-                  child: FlatButton(
+                  child: TextButton(
                     onPressed: () {
                       setState(() {
                         selectedIndex = 0;
                         _controller.animateTo(0);
                       });
                     },
-                    color: selectedIndex == 0
-                        ? Colors.orangeAccent
-                        : Colors.amber[100],
+                    style: TextButton.styleFrom(
+                      backgroundColor: selectedIndex == 0
+                          ? Colors.orangeAccent
+                          : Colors.amber[100],
+                    ),
                     child: Text(
                       'Plots Demo',
                       style: TextStyle(backgroundColor: Colors.transparent),
@@ -84,10 +86,12 @@ class _ExampleAppState extends State<ExampleApp>
                           ),
                         ),
                   padding: EdgeInsets.symmetric(horizontal: 6.0),
-                  child: FlatButton(
-                    color: selectedIndex == 1
-                        ? Colors.orangeAccent
-                        : Colors.amber[100],
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: selectedIndex == 1
+                          ? Colors.orangeAccent
+                          : Colors.amber[100],
+                    ),
                     onPressed: () {
                       setState(() {
                         selectedIndex = 1;
