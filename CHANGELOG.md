@@ -1,3 +1,7 @@
+## [0.7.0-null-safety] 12 May 2021
+
+- Migrated code base to support null safety.
+
 ## [0.6.2-0.6.3] 27 August 2020
 
 - Some fixes for improving the scores.
