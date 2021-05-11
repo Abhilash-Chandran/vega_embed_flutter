@@ -6,7 +6,7 @@ import 'package:js/js.dart';
 /// proxy class for vegaEmbed global function.
 @JS('vegaEmbed')
 external void vegaEmbed(dynamic domElement, String vegaSchema,
-    [VegaEmbedOptions vegaEmbedOptions]);
+    [VegaEmbedOptions? vegaEmbedOptions]);
 
 /// Represents the VegaEmbed Options like theme, renderer etc.
 @JS()
@@ -14,30 +14,30 @@ external void vegaEmbed(dynamic domElement, String vegaSchema,
 class VegaEmbedOptions {
   /// Embed options for VegaLiteEmbedder
   external factory VegaEmbedOptions({
-    String mode,
-    String theme,
+    String? mode,
+    String? theme,
     dynamic defaultStyle,
-    String renderer,
-    LogLevel logLevel,
+    String? renderer,
+    LogLevel? logLevel,
     dynamic tooltip,
     // todo: Define loader
     // todo: define patch
-    num width,
-    num height,
-    Padding padding,
-    Actions actions,
-    num scaleFactor,
+    num? width,
+    num? height,
+    Padding? padding,
+    Actions? actions,
+    num? scaleFactor,
     // todo: define config
 
-    String editorUrl,
-    String sourceHeader,
-    String sourceFooter,
+    String? editorUrl,
+    String? sourceHeader,
+    String? sourceFooter,
     // todo: define hover,
 
-    I18N i18n,
-    String downloadFileName,
-    FormatLocale formatLocale,
-    TimeFormatLocale timeFormatLocale,
+    I18N? i18n,
+    String? downloadFileName,
+    FormatLocale? formatLocale,
+    TimeFormatLocale? timeFormatLocale,
   });
 
   /// mode

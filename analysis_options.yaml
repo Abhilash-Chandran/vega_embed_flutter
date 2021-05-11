@@ -5,7 +5,8 @@ analyzer:
   exclude:    
     - 'lib/src/web_view/*.g.dart'
     - 'lib/src/web_view/*.freezed.dart'
+    - 'example/**.dart'
 
 linter:
   rules:
-    - public_member_api_docs
+    # - public_member_api_docs

@@ -20,31 +20,30 @@ class VegaLiteEmbedder extends StatefulWidget {
   /// Set of options for vegaEmbedder. Please check the documentation of vega-embed for more info.
   /// This is dartified version of the options available.
   /// Please bear in mind this functionality is not tested and could break easily.
-  final VegaEmbedOptions vegaOptions;
+  final VegaEmbedOptions? vegaOptions;
 
   /// Constructor for VegaLiteEmbedder.
   VegaLiteEmbedder({
-    @required this.viewFactoryId,
-    @required this.vegaLiteSpecLocation,
+    required this.viewFactoryId,
+    required this.vegaLiteSpecLocation,
     this.vegaOptions,
-  })  : assert(vegaLiteSpecLocation != null, 'Provide a vegalitespeclocation.'),
-        assert(viewFactoryId != null);
+  });
   @override
   _VegaLiteEmbedderState createState() => _VegaLiteEmbedderState();
 }
 
 class _VegaLiteEmbedderState extends State<VegaLiteEmbedder> {
   /// The Body element which hold the styles and scripts
-  BodyElement bodyElement;
+  BodyElement bodyElement = BodyElement();
 
   /// The div element where the chart will be embedded
-  DivElement divElement;
+  late DivElement divElement;
 
   @override
   void initState() {
     super.initState();
     divElement = DivElement()..id = widget.viewFactoryId;
-    bodyElement = BodyElement();
+
     // add the div element which holds the plot.
     bodyElement.append(divElement);
 
@@ -61,20 +60,15 @@ class _VegaLiteEmbedderState extends State<VegaLiteEmbedder> {
         (int viewId) {
       return bodyElement;
     });
-    if (widget.vegaLiteSpecLocation != null) {
-      if (widget.vegaOptions != null) {
-        if (widget.vegaOptions.defaultStyle is String) {
-          var embedStyle = StyleElement()
-            ..innerText = widget.vegaOptions.defaultStyle.toString();
-          bodyElement.append(embedStyle);
-        }
-        vegaEmbed(divElement, widget.vegaLiteSpecLocation, widget.vegaOptions);
-      } else {
-        vegaEmbed(divElement, widget.vegaLiteSpecLocation);
+    if (widget.vegaOptions != null) {
+      if (widget.vegaOptions?.defaultStyle is String) {
+        var embedStyle = StyleElement()
+          ..innerText = widget.vegaOptions?.defaultStyle.toString() ?? '';
+        bodyElement.append(embedStyle);
       }
+      vegaEmbed(divElement, widget.vegaLiteSpecLocation, widget.vegaOptions);
     } else {
-      divElement
-          .appendText('Something went wrong. A vega-lite Spec is mandatory.');
+      vegaEmbed(divElement, widget.vegaLiteSpecLocation);
     }
     return HtmlElementView(viewType: widget.viewFactoryId);
   }

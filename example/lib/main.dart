@@ -22,7 +22,7 @@ class ExampleApp extends StatefulWidget {
 class _ExampleAppState extends State<ExampleApp>
     with SingleTickerProviderStateMixin {
   int selectedIndex = 0;
-  TabController _controller;
+  late TabController _controller;
 
   @override
   void initState() {
@@ -122,7 +122,7 @@ class _ExampleAppState extends State<ExampleApp>
 
 class MainDemoPage extends StatelessWidget {
   const MainDemoPage({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -213,7 +213,7 @@ class _PlotWithOptionsState extends State<PlotWithOptions> {
   final PageController _pageController = PageController();
   final StreamController<List<int>> _pageIndexStreamCntlr =
       StreamController<List<int>>.broadcast();
-  Stream<List<int>> pageIndexStream;
+  late Stream<List<int>> pageIndexStream;
   @override
   void initState() {
     super.initState();
@@ -342,22 +342,23 @@ class _PlotWithOptionsState extends State<PlotWithOptions> {
         ),
         Expanded(
           flex: 5,
-          child: StreamBuilder(
+          child: StreamBuilder<List<int>>(
             stream: _pageIndexStreamCntlr.stream,
             builder: (context, streamSnap) {
               if (streamSnap.hasData) {
                 bundle = DefaultAssetBundle.of(context);
-                var file = 'lib/examples/example${streamSnap.data[0]}.dart';
-                return FutureBuilder(
+                var currIndex = streamSnap.data![0];
+                var file = 'lib/examples/example${currIndex}.dart';
+                return FutureBuilder<String>(
                     future: bundle.loadString(file, cache: true),
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
                         return CodeBox(
-                          code: snapshot.data,
-                          viewId: 'codeBox_${streamSnap.data[0]}',
-                          key: ValueKey('codeBox_${streamSnap.data[0]}'),
-                          hlStart: streamSnap.data[1],
-                          hlEnd: streamSnap.data[2],
+                          code: snapshot.data ?? '',
+                          viewId: 'codeBox_${currIndex}',
+                          key: ValueKey('codeBox_${currIndex}'),
+                          hlStart: streamSnap.data![1],
+                          hlEnd: streamSnap.data![2],
                         );
                       }
                       return Center(
@@ -384,7 +385,7 @@ class _PlotWithOptionsState extends State<PlotWithOptions> {
 
 class ListButton extends StatelessWidget {
   final PageController controller;
-  final StreamController _pageIndexController;
+  final StreamController<List<int>> _pageIndexController;
   final int index;
   final String label;
   final int hlStart;
@@ -409,7 +410,7 @@ class ListButton extends StatelessWidget {
     return StreamBuilder<List<int>>(
         stream: _pageIndexController.stream,
         builder: (context, snapshot) {
-          if (snapshot.hasData && snapshot.data[0] == index + 1) {
+          if (snapshot.hasData && snapshot.data![0] == index + 1) {
             return Ink(
               color: Colors.orangeAccent,
               child: _child,
@@ -422,7 +423,7 @@ class ListButton extends StatelessWidget {
 
 class PlotOptionsView extends StatefulWidget {
   final PageController pageController;
-  PlotOptionsView({this.pageController});
+  PlotOptionsView({required this.pageController});
   @override
   _PlotOptionsViewState createState() => _PlotOptionsViewState();
 }

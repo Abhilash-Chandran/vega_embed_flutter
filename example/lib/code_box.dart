@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 class CodeBox extends StatefulWidget {
   final String code;
   final String viewId;
-  final int hlStart;
-  final int hlEnd;
+  final int? hlStart;
+  final int? hlEnd;
   const CodeBox({
-    @required this.code,
-    @required this.viewId,
+    required this.code,
+    required this.viewId,
     this.hlStart,
     this.hlEnd,
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -22,7 +22,7 @@ class CodeBox extends StatefulWidget {
 
 class _CodeBoxState extends State<CodeBox> {
   final IFrameElement iFrameElement = IFrameElement();
-  String iFrameSrc;
+  late String iFrameSrc;
 
   @override
   Widget build(BuildContext context) {

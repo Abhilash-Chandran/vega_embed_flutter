@@ -12,32 +12,28 @@ class VegaLiteWebViewEmbedder extends StatefulWidget {
   final String vegaLiteSpecLocation;
 
   /// Embed options for webview [VegaLiteWebViewEmbedder].
-  final VegaEmbedOptions vegaEmbedOptions;
+  final VegaEmbedOptions? vegaEmbedOptions;
 
   /// Set of options for vegaEmbeder. Please check the documentation of vega-embed for more info.
   /// This is dartified version of the options avaailable.
   VegaLiteWebViewEmbedder({
-    @required this.vegaLiteSpecLocation,
+    required this.vegaLiteSpecLocation,
     this.vegaEmbedOptions,
-  }) : assert(vegaLiteSpecLocation != null, 'Provide a vegalitespeclocation.');
+  });
   @override
   _VegaLiteWebViewEmbedderState createState() =>
       _VegaLiteWebViewEmbedderState();
 }
 
 class _VegaLiteWebViewEmbedderState extends State<VegaLiteWebViewEmbedder> {
-  VegaEmbedOptions _embedOptions;
+  late VegaEmbedOptions? _embedOptions;
+  late WebViewController _controller;
+
   @override
   void initState() {
     super.initState();
-    if (widget.vegaEmbedOptions == null) {
-      _embedOptions = VegaEmbedOptions();
-    } else {
-      _embedOptions = widget.vegaEmbedOptions;
-    }
+    _embedOptions = widget.vegaEmbedOptions;
   }
-
-  WebViewController _controller;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +44,7 @@ class _VegaLiteWebViewEmbedderState extends State<VegaLiteWebViewEmbedder> {
         if (snapshot.hasData) {
           var _divId = 'plot_div';
           var vegaEmbedScript =
-              'vegaEmbed("#$_divId", ${snapshot.data}, ${json.encode(_embedOptions.toJson())})';
+              'vegaEmbed("#$_divId", ${snapshot.data}, ${json.encode(_embedOptions?.toJson() ?? '')})';
           var html = '''
         <!DOCTYPE html>
         <html lang="en">
